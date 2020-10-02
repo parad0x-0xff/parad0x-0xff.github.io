@@ -1,0 +1,8 @@
+jekyll:
+  build: .
+  ports:
+    - 4000:4000
+  container_name: blog-jekyll
+  volumes:
+    - /Users/Little-Brick/Projects/Allan-Trindad.github.io/:/srv/jekyll
+
