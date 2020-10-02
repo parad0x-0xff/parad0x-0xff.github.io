@@ -16,9 +16,9 @@
 title: Archived blog post
 author: "<your_name>"
 email: "<your@mail>"
-description: A simple Jekyll theme based on potatoes and hackers
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+description: My Blog
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://allan-trindad.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # ------------------------------------------------------------------------------
 # Custom settings
