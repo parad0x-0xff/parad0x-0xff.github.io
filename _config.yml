@@ -14,20 +14,20 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Archived blog post
-author: "<your_name>"
-email: "<your@mail>"
+author: "Allan Trindad"
+email: "at.ferreira@protonmail.com"
 description: My Blog
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://allan-trindad.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # ------------------------------------------------------------------------------
 # Custom settings
 # ------------------------------------------------------------------------------
 # Useful links
-github_username: "<github_username>"
-facebook_username: "<facebook_username>"
-twitter_username: "<twitter_username>"
-linkedin_id: "<linkedin_id>"
+github_username: "Allan-Trindad"
+facebook_username: "Nha#"
+twitter_username: "Allan_Trindad"
+linkedin_id: "Nha#"
 
 # Theme
 # theme: jekyll-theme-potato-hacker                 # Uncomment this
@@ -40,7 +40,7 @@ theme_switch: on         # Show color switch (on | off)
 blog: on                 # Show blog tag and post list (on | off)
 avatar: on               # Show avatar (on | off)
 avatar_image: "assets/img/avatar.jpg"
-avatar_description: "My name is Allan and I'm struggling to a Hacker"
+avatar_description: "My name is Allan and I'm struggling to be a potato"
 highlighter_theme: gruvbox  # Theme of the syntax_highlighter [base16 |
                             # colorful | github | gruvbox | molokai |
                             # monokai | pastie | thankful_eyes | tulip ]
