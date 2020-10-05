@@ -3,4 +3,4 @@ COPY . /srv/jekyll
 WORKDIR /srv/jekyll
 RUN gem install bundler -v 1.12
 RUN bundle _1.12_ install
-CMD jekyll serve --watch --incremental
+ENTRYPOINT [ "/bin/bash" ]
