@@ -13,21 +13,22 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Archived blog post
+title: Black Pearl's blog
 author: "Allan Trindad"
 email: "at.ferreira@protonmail.com"
 description: My Blog
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "http://allan-trindad.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+#baseurl: "/jekyll-theme-potato-hacker" # local
+baseurl: "/" # github pages
+url: "http://allan-trindad.github.io/" # github pages
 
 # ------------------------------------------------------------------------------
 # Custom settings
 # ------------------------------------------------------------------------------
 # Useful links
 github_username: "Allan-Trindad"
-facebook_username: "Nha#"
+facebook_username: "zuck"
 twitter_username: "Allan_Trindad"
-linkedin_id: "Nha#"
+linkedin_id: "in/ryanroslansky?trk=author_mini-profile_title&challengeId=AQHVAim4lVOTcQAAAXT2UtZxd6mmsWrqUJyqZgGHRxVb_yi5LVfJUzJfxve8-u51BVftxzmBEt484qmaPIoh7YRxT7iCWjCKsg&submissionId=03a07872-99f3-3a16-2a96-cb504675385c"
 
 # Theme
 # theme: jekyll-theme-potato-hacker                 # Uncomment this
@@ -45,8 +46,8 @@ highlighter_theme: gruvbox  # Theme of the syntax_highlighter [base16 |
                             # colorful | github | gruvbox | molokai |
                             # monokai | pastie | thankful_eyes | tulip ]
 toolbar_priority:        # Order of the items in the toolbar (except for blog and home)
-  - dropdown2
-  - About
+  #- dropdown2
+  #- About
   - dropdown1
 
 # Collections
