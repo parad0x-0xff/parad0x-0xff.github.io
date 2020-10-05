@@ -17,8 +17,7 @@ title: Black Pearl's blog
 author: "Allan Trindad"
 email: "at.ferreira@protonmail.com"
 description: My Blog
-#baseurl: "/jekyll-theme-potato-hacker" # local
-baseurl: "/" # github pages
+baseurl: ""
 url: "http://allan-trindad.github.io/" # github pages
 
 # ------------------------------------------------------------------------------
