@@ -6,7 +6,11 @@ title: Nuts About Sec
 
 ## Descrição
 
-Blog criado com o intuíto de disseminar conteúdo hacking para Rasquers!.<br> 
+Toda pessoa que começa a escrever um blog sempre começa com algum conteúdo básico, independente da sua área. "Minha visão" e comigo não vai ser diferente, não sou muito bom em escrever textos extremamente elaborados, com a melhor ortografia ou concordância verbal.<br>
+
+Mas farei o possível para trazer conteúdo em uma linguagem simples, facíl de assimilar e fazer com que você (leitor) saia deste blog no minímo mais pensativo.<br>
+
+Criei este blog com o intuíto de disseminar conteúdo de **Rasquers para Rasquers!**.<br> 
 Que sinceramenta eu vejo como uma pequena retribuição, depois de ter aprendido tanto com outros posts. 
 Creio que seja o minímo que eu possa fazer... <br>
 A ideía é trazer conteúdo em português, para fortalecer a comunidade BR \o/.<br>
