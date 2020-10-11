@@ -1,8 +1,38 @@
 ---
 layout: default
-title: Welcome Page
-description: welcome page
+title: Nuts About Sec
 ---
 
 
-# Sobre este blog
+## Descrição
+
+Blog criado com o intuíto de disseminar conteúdo hacking para Rasquers!.<br> 
+Que sinceramenta eu vejo como uma pequena retribuição, depois de ter aprendido tanto com outros posts. 
+Creio que seja o minímo que eu possa fazer... <br>
+A ideía é trazer conteúdo em português, para fortalecer a comunidade BR \o/.<br>
+<br>
+Afinal de contas foi aqui que eu conheci pessoas que me inspiram até hoje!!<br>
+Podendo haver conteúdo em inglês mas isso é assunto para uma outra seção (literalmete), 
+também pretendo disponilibilzar projetos opensource e muito mais!!! 
+**(Eu disse hacking, ~~Lamers are not allowed~~)**.<br>
+
+
+## Objetivo
+
+`code review`, `pentest whitebox`, `web exploitation` e `desenvolvimento seguro`.<br>
+Esses são os assuntos que pretendo abordar com mais ênfase durante essa minha jornada de blogueiro.
+Assuntos dos quais eu percebi que possuem uma certa deficiência no quesito divulgação.
+Que (in)felizmente essa é a área que estou me especializando.
+
+## Motivação
+
+* A cada dia que passa minha vontade de achar bugs em códigos aumenta!
+
+* Enquanto mais eu aprendo mais a fundo eu quero ir.
+
+* Achar um XSS, SQLi, LFI, sem entender como foi feita cada linha de código, me deixa louco.
+
+* Se eu não compartilhar essa minha nova jornada de aprendizado, acho que teria um treco.
+
+* Pretendo utilizar este blog como meu portfólio.
+
