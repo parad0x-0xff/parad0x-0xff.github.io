@@ -88,13 +88,8 @@ Mas isso não significa que sua aplicação estará totalmente protegida,<br>
 lembre-se nenhum sistema é 100% seguro, vulnerabilidades surgem todos os dias em aplicativos, frameworks, bibliotecas, então mantenha suas análises de segurança em dia identificando e corrigindo o máximo possível antes que outra pessoa faça isso.
 
 
-
-
-
-
 #### Referências
 
 [Mitre](https://www.mitre.org/publications/systems-engineering-guide/enterprise-engineering/systems-engineering-for-mission-assurance/secure-code-review)<br>
 [OWASP](https://owasp.org/www-community/controls/Static_Code_Analysis)<br>
 [OWASP code review guide](https://owasp.org/www-pdf-archive/OWASP_Code_Review_Guide_v2.pdf)<br>
-
