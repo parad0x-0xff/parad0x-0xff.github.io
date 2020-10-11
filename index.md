@@ -6,18 +6,18 @@ title: Nuts About Sec
 
 ## Descrição
 
-Toda pessoa que começa a escrever um blog sempre começa com algum conteúdo básico, independente da sua área. "Minha visão" e comigo não vai ser diferente, não sou muito bom em escrever textos extremamente elaborados, com a melhor ortografia ou concordância verbal.<br>
+Toda pessoa que começa a escrever um blog sempre começa com algum conteúdo básico, independente da sua área. "Minha visão" e comigo não vai ser diferente, não sou muito bom em escrever textos extremamente elaborados, com a melhor ortografia ou concordância verbal. Mas sinta-se a vontade para me chamar no twitter e discutir mais sobre o assunto, sugerir melhorias ou simplesmente dizer se achou o conteúdo útil. =)<br>
 
-Mas farei o possível para trazer conteúdo em uma linguagem simples, facíl de assimilar e fazer com que você (leitor) saia deste blog no minímo mais pensativo.<br>
+Farei o possível para trazer conteúdo em uma linguagem simples, fácil de assimilar e fazer com que você (leitor) saia deste blog no mínimo mais pensativo.<br>
 
 Criei este blog com o intuíto de disseminar conteúdo de **Rasquers para Rasquers!**.<br> 
-Que sinceramenta eu vejo como uma pequena retribuição, depois de ter aprendido tanto com outros posts. 
-Creio que seja o minímo que eu possa fazer... <br>
+Que sinceramente eu vejo como uma pequena retribuição, depois de ter aprendido tanto com outros posts. 
+Creio que seja o mínimo que eu possa fazer... <br>
 A ideía é trazer conteúdo em português, para fortalecer a comunidade BR \o/.<br>
 <br>
 Afinal de contas foi aqui que eu conheci pessoas que me inspiram até hoje!!<br>
-Podendo haver conteúdo em inglês mas isso é assunto para uma outra seção (literalmete), 
-também pretendo disponilibilzar projetos opensource e muito mais!!! 
+Podendo haver conteúdo em inglês mas isso é assunto para uma outra seção (literalmente), 
+também pretendo disponibilizar projetos open-source e muito mais!!! 
 **(Eu disse hacking, ~~Lamers are not allowed~~)**.<br>
 
 
