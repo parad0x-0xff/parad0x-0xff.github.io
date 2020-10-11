@@ -38,5 +38,5 @@ Que (in)felizmente essa é a área que estou me especializando.
 ## Creditos
 Este blog foi criado utilizando o tema potato-hacker para jekyll,<br>
 todos os créditos do tema são do [luxedo](https://github.com/luxedo/jekyll-theme-potato-hacker) 
-e você pode encontrar todas as informações sobre o tema no github dele.<br>
+e você pode encontrar mais informações sobre o tema no github dele.<br>
 Obrigado por este tema incrível!
