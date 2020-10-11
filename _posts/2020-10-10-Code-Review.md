@@ -20,7 +20,7 @@ Já conheci pessoas que chegaram a me dizer que eram a **mesma coisa**, que uma 
 
 ### Code Review
 
-Ele engloba dentro dele os termos citados, então se eu fosse fazer uma analogia ficaria algo mais ou menos assim:
+No meu ponto de vista a palavra "code review" engloba os termos citados anteriormente, então se eu fosse fazer uma analogia ficaria algo mais ou menos assim:
 ```json
 {
     Code Review = {
@@ -30,9 +30,9 @@ Ele engloba dentro dele os termos citados, então se eu fosse fazer uma analogia
     }
 }
 ```
-Code review é o ato de analisar o código fonte de uma aplicação afim de encontrar vulnerabilidades, fragilidades e más praticas de codificação. Podendo ser feito analise manual, testes automatizados ou até mesmo a junção dos dois.<br> 
+Code review é o ato de analisar o código fonte de uma aplicação afim de encontrar vulnerabilidades, fragilidades e a validação de boas práticas no que remete-se a codificação segura. Podendo ser feita uma analise manual, testes automatizados ou até mesmo a junção dos dois.<br> 
 
-Devemos nos atentar que existem diferenças quando utilizamos o termo "code review", pois no mundo dos desenvolvedores code review está relacionado a verificação de performance, melhores práticas, código limpo, etc. Dependendo do revisor pode-se apontar falhas de segurança, mas isso não é o principal foco e normalmente as falhas estão relacionadas a lógica da aplicação que pode levar a uma fraude por exemplo.
+Devemos nos atentar que existem diferenças quando utilizamos o termo "code review", pois no mundo dos desenvolvedores este termo técnico está relacionado a verificação de performance, melhores práticas, código limpo, etc. Dependendo do revisor pode-se apontar falhas de segurança, mas isso não é o principal foco e normalmente as falhas estão relacionadas a lógica da aplicação que pode levar a uma fraude por exemplo.
 
 * **Vulnerabilidade**:
     * É quando de fato encontramos alguma função, método ou classe que está diretamente ligado a uma vulnerabilidade. Algo que de fato exponha sua aplicação à algum tipo de ataque. Por exemplo:(XSS, SQLi, XXE, RCE, etc..)
@@ -40,8 +40,9 @@ Devemos nos atentar que existem diferenças quando utilizamos o termo "code revi
 * **Fragilidade**:
     * Não representa diretamente uma vulnerabilidade, mas um conjunto de fragilidades podem ser utilizadas para criar uma vulnerabilidade, normalmente validações fracas, erros de comparação, known bad (vulgo blacklist)
 
-* **Más práticas**:
-    * Aqui estamos falando de senhas chumbadas no código, comentários contendo informações sensíveis, por exemplo: em HTML ou javascript que permita que alguém mesmo que não detenha o código fonte consiga ter ideia da regra de negócio ou como é o fluxo de sua aplicação.
+* **Boas práticas**:
+    * Aqui estamos falando não das boas práticas em si, mas sim da falta dela.
+    Senhas chumbadas no código, comentários contendo informações sensíveis, por exemplo: em HTML ou javascript que permita que alguém mesmo que não detenha o código fonte consiga ter ideia da regra de negócio ou como é o fluxo de sua aplicação.
 
 #### Foco
 
@@ -74,7 +75,7 @@ No meu ponto de vista é a mistura de um code review + validação ou seja, o(a)
 
 Você está realizando um pentest whitebox, então resolveu executar uma ferramenta que realiza um fuzzing na aplicação.<br>
 
-Enquanto está rolando um fuzzing com alguns payloads cabulosos, vamos supor que aplicação quebre em algum ponto específico.<br>
+Enquanto está rolando um fuzzing com alguns payloads cabulosos, vamos supor que a aplicação quebre em algum ponto específico.<br>
 
 Você pode verificar na sua IDE (Integrated Development Environment) debugando o código e verificando os valores das variáveis. Podendo encontrar um possível bypass para uma determinada proteção que foi construída para aquela função que você conseguiu quebrar através de um input.
 
