@@ -1,11 +1,13 @@
 ---
-layout: post
-title:  "O que é code review?"
-date:   2020-10-10 04:24:12 -0300 
-categories: blog
-layout: post
+layout: page
+title: O que é?
+description: O que é..
+dropdown: Code Review
+priority: 1
 ---
-O que compõe um code review e suas metodologias...
+
+
+O que compõe um code review e suas diferenças...
 <!--more-->
 
 ## Introdução
