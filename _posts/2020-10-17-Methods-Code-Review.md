@@ -104,3 +104,7 @@ Entender qual dessas abordagens pode ser melhor para o seu cenário é muito imp
 Por hoje é só pessoal!!<br>
 
 ![](https://media.giphy.com/media/APHFMUIaTnLIA/giphy.gif)
+
+#### Referências
+
+[PentesterLab](https://pentesterlab.com/badges/codereview)
