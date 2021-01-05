@@ -4,9 +4,23 @@ title: About Me
 ---
 
 
-<div class="alert alert-danger" role="alert">
-  <strong>Oh 0.o</strong> Em construção...<br>
-  <br>
-061 062 063 040 061 064 065 040 060 064 060 040 061 066 066 040 061 065 067 040 061 064 063 040 063 060 063 040 062 065 062 040 060 064 060 040 061 064 063 040 061 066 065 040 061 066 062 040 061 066 064 040 061 064 065 040 060 064 060 040 061 060 063 040 061 062 064 040 061 060 066 040 060 064 060 040 061 064 065 040 061 065 066 040 061 066 064 040 063 060 063 040 062 064 063 040 061 065 067 040 060 064 060 040 061 064 065 040 061 066 063 040 061 066 063 040 061 064 061 040 060 064 060 040 061 066 066 040 061 064 061 040 061 065 061 040 060 064 060 040 061 066 063 040 061 064 065 040 061 066 062 040 060 064 060 040 061 065 065 040 061 064 061 040 061 065 065 040 063 060 063 040 062 064 063 040 061 065 067 040 060 064 060 040 061 064 063 040 061 065 067 040 061 065 065 040 060 064 060 040 061 064 061 040 063 060 063 040 062 064 067 040 063 060 063 040 062 067 062 040 061 064 063 040 061 064 061 040 061 066 062 040 060 064 061 040 060 064 061 040 060 061 065 040 060 061 062 040 061 064 066 040 061 065 064 040 061 064 061 040 061 064 067 040 060 067 062 040 061 067 063 040 061 061 060 040 060 066 064 040 061 064 063 040 061 065 063 040 060 066 063 040 061 066 062 040 061 063 067 040 061 061 060 040 061 064 061 040 061 060 063 040 061 065 063 040 061 060 065 040 061 065 061 040 061 060 061 040 061 067 065
+<div class="alert alert-info" role="alert">
+Sou apenas mais um hacker no mundo que curte segurança e se diverte no que faz, atualmente me especializando em segurança de aplicações web. Sendo um pouco mais específico em "code review". Trabalhando atualmente como analista de segurança ofensiva em uma empresa de pagamentos.
+<br><br>
+Durante o tempo livre gosto de jogar CTF (Capture The Flag) e me perder nos terabytes de livros e cursos que prentendo fazer algum dia... 😅 Fora do hacking você sempre vai me ver na praia admirando o mar com uma caipirinha na mão. 
+<br><br>
+Cheers! 🍹
 </div>
 
+## Certificações
+
+### DCPT
+<img src="/assets/img/DCPT.png" width="400" height="500"/> 
+<br>
+
+### PentesterLab
+<img src="/assets/img/PentesterLab.jpg"/>
+<br>
+
+### OSCP
+<img src="/assets/img/OSCP-badge.png" width="300" height="400"/>
