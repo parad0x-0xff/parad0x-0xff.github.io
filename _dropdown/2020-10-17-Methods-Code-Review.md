@@ -3,7 +3,7 @@ layout: page
 title: Estratégias
 description: Code Review
 dropdown: Code Review
-priority: 1
+priority: 3
 ---
 
 
