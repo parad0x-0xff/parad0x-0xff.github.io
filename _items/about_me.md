@@ -11,16 +11,3 @@ Durante o tempo livre gosto de jogar CTF (Capture The Flag) e me perder nos tera
 <br><br>
 Cheers! 🍹
 </div>
-
-## Certificações
-
-### DCPT
-<img src="/assets/img/DCPT.png" width="400" height="500"/> 
-<br>
-
-### PentesterLab
-<img src="/assets/img/PentesterLab.jpg"/>
-<br>
-
-### OSCP
-<img src="/assets/img/OSCP-badge.png" width="300" height="400"/>

@@ -14,19 +14,19 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Black Pearl's blog
-author: "Allan Trindad"
+author: "parad0x_0xff"
 email: "at.ferreira@protonmail.com"
 description: My Blog
 baseurl: ""
-url: "http://allan-trindad.github.io/" # github pages
+url: "http://parad0x-0xff.github.io/" # github pages
 
 # ------------------------------------------------------------------------------
 # Custom settings
 # ------------------------------------------------------------------------------
 # Useful links
-github_username: "Allan-Trindad"
+github_username: "parad0x-0xff"
 facebook_username: "zuck"
-twitter_username: "Allan_Trindad"
+twitter_username: "parad0x_0xff"
 linkedin_id: "in/ryanroslansky?trk=author_mini-profile_title&challengeId=AQHVAim4lVOTcQAAAXT2UtZxd6mmsWrqUJyqZgGHRxVb_yi5LVfJUzJfxve8-u51BVftxzmBEt484qmaPIoh7YRxT7iCWjCKsg&submissionId=03a07872-99f3-3a16-2a96-cb504675385c"
 
 # Theme
@@ -40,7 +40,7 @@ theme_switch: on         # Show color switch (on | off)
 blog: on                 # Show blog tag and post list (on | off)
 avatar: on               # Show avatar (on | off)
 avatar_image: "assets/img/avatar.jpg"
-avatar_description: "My name is Allan and I'm struggling to be a potato"
+avatar_description: "Every day is a zero day!"
 highlighter_theme: gruvbox  # Theme of the syntax_highlighter [base16 |
                             # colorful | github | gruvbox | molokai |
                             # monokai | pastie | thankful_eyes | tulip ]
