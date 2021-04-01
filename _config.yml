@@ -16,7 +16,7 @@
 title: Black Pearl's blog
 author: "parad0x_0xff"
 email: "at.ferreira@protonmail.com"
-description: My Blog
+description: Blog Rasquer!
 baseurl: ""
 url: "http://parad0x-0xff.github.io/" # github pages
 
@@ -40,7 +40,7 @@ theme_switch: on         # Show color switch (on | off)
 blog: on                 # Show blog tag and post list (on | off)
 avatar: on               # Show avatar (on | off)
 avatar_image: "assets/img/avatar.jpg"
-avatar_description: "Every day is a zero day!"
+avatar_description: "Every day is a zero day[!]"
 highlighter_theme: gruvbox  # Theme of the syntax_highlighter [base16 |
                             # colorful | github | gruvbox | molokai |
                             # monokai | pastie | thankful_eyes | tulip ]
