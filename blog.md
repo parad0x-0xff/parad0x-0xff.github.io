@@ -1,5 +1,5 @@
 ---
 layout: blog-index
-title: My Blog
-description: Test page
+title: Dead men tell no tales
+description: Pirate Ship
 ---

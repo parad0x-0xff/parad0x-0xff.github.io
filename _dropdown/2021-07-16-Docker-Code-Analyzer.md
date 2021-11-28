@@ -1,9 +1,9 @@
 ---
-layout: post
-title: "Docker Code Analyzer"
-date: 2021-07-16 13:37:00 -0300 
-categories: blog
-layout: post
+layout: page
+title: Docker Code Analyzer
+description: Docker Code Analyzer
+dropdown: Code Review
+priority: 3
 ---
 
 
@@ -28,4 +28,4 @@ Para isso vou criar um post para cada linguagem, explicando o passo a passo da c
 
 ## Linguagens disponíveis
 
-* [PHP](/2021/11/26/DCA-php.html)
+* [PHP](/dropdown/2021-11-26-DCA-php.html)
