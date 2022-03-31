@@ -13,10 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Black Pearl
+title: Nightmare's Code
 author: "parad0x_0xff"
-email: "at.ferreira@protonmail.com"
-description: Blog Rasquer!
+email: "allan_trindad@hotmail.com"
+description: Blog Pirata!
 baseurl: ""
 url: "http://parad0x-0xff.github.io/" # github pages
 
@@ -41,7 +41,7 @@ blog: on                 # Show blog tag and post list (on | off)
 avatar: on               # Show avatar (on | off)
 avatar_image: "assets/img/avatar.jpg"
 avatar_description: "Under a black flag we shall sail"
-highlighter_theme: gruvbox  # Theme of the syntax_highlighter [base16 |
+highlighter_theme: thankful_eyes  # Theme of the syntax_highlighter [base16 |
                             # colorful | github | gruvbox | molokai |
                             # monokai | pastie | thankful_eyes | tulip ]
 toolbar_priority:        # Order of the items in the toolbar (except for blog and home)
