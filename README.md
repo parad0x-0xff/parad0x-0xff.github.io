@@ -1,42 +1,26 @@
-#  Nuts About Sec
+## Intro
 
+Yoho!! Meu nome é **Parad0x** e esse é o meu navio pirata `Nightmare's Code`.<br>
+Acredito muito na semelhanças entre hackers e piratas, por isso a temática...<br>
+A ideia deste blog é focar em assuntos relacionados a exploração de código em aplicações web.<br>
 
 ## Descrição
 
-
-Criei este blog com o intuíto de disseminar conteúdo de **Rasquers para Rasquers!**.<br> 
-Que sinceramente eu vejo como uma pequena retribuição, depois de ter aprendido tanto com outros posts.<br> 
-Creio que seja o mínimo que eu possa fazer... <br>
-A ideía é trazer conteúdo em português, para fortalecer a comunidade BR \o/.<br>
-<br>
-Afinal de contas foi aqui que eu conheci pessoas que me inspiram até hoje!!<br>
-Pretendo publicar conteúdo em inglês, pois compartilhar conhecimento nunca é demais.<br> 
-também pretendo disponibilizar projetos open-source, tutoriais e muito mais!!!<br> 
-**(Eu disse hacking, ~~Lamers are not allowed~~)**.<br>
-
-
-## Objetivo
-
-`code review`, `whitebox`, `web exploitation` e `desenvolvimento seguro`.<br>
-Esses são os assuntos que pretendo abordar com mais ênfase durante essa minha jornada de blogueiro.
-Assuntos dos quais eu percebi que possuem uma certa deficiência no quesito divulgação.
+`code review` e `pentest whitebox`<br>
+Esses são dois assuntos que pretendo abordar com mais ênfase durante essa minha jornada de capitão pirata!
+Assuntos dos quais eu percebi que possuem uma certa deficiência no quesito divulgação. 
 Que (in)felizmente essa é a área que estou me especializando.
 
 ## Motivação
 
-* A cada dia que passa minha vontade de achar bugs em códigos aumenta!
+* Disseminar conteúdo em português, para fortalecer a comunidade BR \o/.
 
-* Enquanto mais eu aprendo mais a fundo eu quero ir.
+* Lembrai, lembrai, o cinco de novembro. A pólvora, a traição e o [Manifesto](http://phrack.org/issues/7/3.html).
 
-* Achar um XSS, SQLi, LFI, sem entender como foi feita cada linha de código, me deixa louco.
-
-* Se eu não compartilhar essa minha nova jornada de aprendizado, acho que teria um treco.
-
-* Pretendo utilizar este blog como meu portfólio.
+* Nem todo hacker é ético, mas todo hacker possui sua [Ética](https://pt.wikipedia.org/wiki/%C3%89tica_hacker).
 
 
 ## Creditos
 Este blog foi criado utilizando o tema potato-hacker para jekyll,<br>
 todos os créditos do tema são do [luxedo](https://github.com/luxedo/jekyll-theme-potato-hacker) 
 e você pode encontrar mais informações sobre o tema no github dele.<br>
-Obrigado por este tema incrível!
