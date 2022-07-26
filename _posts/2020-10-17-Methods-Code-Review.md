@@ -1,9 +1,8 @@
 ---
 layout: post
 title:  "Estratégias de um code review"
-date:   2020-10-17 23:49:00 -0300 
+date:   2020-10-17 13:37:00 -0300
 categories: blog
-layout: post
 ---
 
 Diferentes tipos e diversas metodologias...
