@@ -1,9 +1,8 @@
 ---
 layout: post
 title:  "O que é code review?"
-date:   2020-10-10 04:24:12 -0300 
+date:   2020-10-10 13:37:00 -0300 
 categories: blog
-layout: post
 ---
 O que compõe um code review e suas diferenças...
 <!--more-->
