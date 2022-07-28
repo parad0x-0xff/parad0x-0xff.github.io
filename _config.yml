@@ -13,10 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Nightmare's Code
+title: Blog Pirata
 author: "parad0x_0xff"
 email: "allan_trindad@hotmail.com"
-description: Blog Pirata!
+description: Navio Pirata!
 baseurl: ""
 url: "http://parad0x-0xff.github.io/" # github pages
 
