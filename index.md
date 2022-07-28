@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 7 Layers
+title: Blog Pirata
 ---
 
 
