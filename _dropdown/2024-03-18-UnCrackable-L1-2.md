@@ -130,7 +130,8 @@ Com essas duas informações conseguimos resgatar o valor original da flag, sem 
 
 ## Referências
 
-https://1337.dcodx.com/research/owasp-mstg-crackme-1-writeup-android
-https://blog.jitendrapatro.me/owasp-android-uncrackable-level-1/
-https://medium.com/@tksec/owasp-uncrackable-app-for-android-level-1-walkthrough-c43a00a16f59
-https://developers.mews.com/cracking-uncrackable-android-apps-level-1/
+* [1337 dcodx blog](https://1337.dcodx.com/research/owasp-mstg-crackme-1-writeup-android)
+* [itendrapatro blog](https://blog.jitendrapatro.me/owasp-android-uncrackable-level-1/)
+* [medium uncrackable L1](https://medium.com/@tksec/owasp-uncrackable-app-for-android-level-1-walkthrough-c43a00a16f59)
+* [developers mews blog](https://developers.mews.com/cracking-uncrackable-android-apps-level-1/)
+* [owasp uncrackable L1](https://mas.owasp.org/crackmes/Android/#android-uncrackable-l1)
