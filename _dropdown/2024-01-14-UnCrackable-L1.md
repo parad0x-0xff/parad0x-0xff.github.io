@@ -203,4 +203,4 @@ Esse é o resultado após a execução do script mostrado acima.
 
 <br>
 
-[Parte 2 continuação...](../../../2024/03/18/UnCrackable-L1-2.html)
+[Parte 2 continuação...](../../../dropdown/2024-03-18-UnCrackable-L1-2.html)
