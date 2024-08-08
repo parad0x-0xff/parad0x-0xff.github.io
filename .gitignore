@@ -1,5 +1,6 @@
 **_site/
 **.sass-cache
+**.lsp/
 _items/Example-page.md
 _posts/2019-01-31-Beyond-Metasploit.md
 _posts/2021-01-27-OSCP-Review-Part1.md
