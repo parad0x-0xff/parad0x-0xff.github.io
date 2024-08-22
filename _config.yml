@@ -15,10 +15,10 @@
 # in the templates via {{ site.myvariable }}.
 title: Blog Pirata
 author: "parad0x_0xff"
-email: "allan_trindad@hotmail.com"
+email: "allan_trindad@proton.me"
 description: Navio Pirata!
 baseurl: ""
-url: "http://parad0x-0xff.github.io/" # github pages
+url: "https://blog.parad0x.vip/" # github pages
 
 # ------------------------------------------------------------------------------
 # Custom settings
