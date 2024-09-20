@@ -110,10 +110,7 @@ Para encontrar a flag podemos executar os seguintes passos:
 Após a execução dos comandos acima, você terá uma lista com todas as strings que passaram pela função de comparação.
 Esse é um processo semi-automático que ainda necessita de alguma interação para obter os valores, mas isso já fornece um começo para que a base possa ser entendida e no futuro você automatize completamente este processo.
 
-<video width="600" height="600" controls>
-  <source src="/assets/img/uncrack-l1.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+<div style="padding:46.88% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1011456274?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="uncrack-l1.mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 ## CyberChief - (flag)
 Aqui seria a forma mais simples de se resolver esse crackme!
