@@ -39,7 +39,7 @@ Segundo o site:
 </div>
 *** 
 
-## Writeup
+## Analise Broadcast
 
 O primeiro passo foi abrir o app e entender as suas funcionalidades, iniciei a aplicação, criei um usuário e fiz o login. Quando tentei um PIN qualquer na tela de MasterSwitch, apareceu a seguinte mensagem: _"The master switch can't be controlled by guests"_. Depois de entender que haviam restrições em alguns comandos para os usuários _guests_ eu decompilei o app e comecei os trabalhos de engenharia reversa para obter mais informações do aplicativo.  
 
@@ -64,7 +64,9 @@ Após abrir o código dessa classe, notei que essa aplicação não possui nenhu
 <img src="/assets/img/MHL_BroadcastReceiver.png" width="600" height="600"/>
 </p>
 <br>
-  
+
+## Analise Intent
+
 **Descobri as seguintes coisas:**
 
 - A action "**MASTER_ON**" tem uma string extra chamada **_"key"_** que é o PIN da tela Master Switch;
@@ -97,7 +99,9 @@ Dando sequência a análise de código percebi que a aplicação realiza o `log`
 <br>
   
 
-Então, decidi criar um shell script para automatizar este processo. 
+Então, decidi criar um shell script para automatizar este processo.
+
+## Exploit
 
 A ideia era enviar um broadcast com um valor do PIN num For Loop e enquanto meu script lê os registos de log do app para que uma vez que a mensagem desejada fosse logada isso significaria que o meu PIN estaria correto independente da mensagem que estivesse na tela.
   
@@ -112,6 +116,8 @@ O shell script fará o trabalho duro e tentará todas as combinações, já que 
 Depois de executar o script e ter o valor correto, para confirmar o PIN eu fiz o comando: `adb shell am broadcast -a MASTER_ON --ei key 345`
 
 Abaixo eu deixei um vídeo da PoC para a demonstração dessa execução!
+
+## Video
 
 <div style="padding:55.77% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1011446067?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="MHL_iotconnect"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
