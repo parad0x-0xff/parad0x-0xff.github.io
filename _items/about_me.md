@@ -9,7 +9,7 @@ title: About Me
 |-------------------|-----------------------------------------------------------------|
 | **Nome:**         | Allan Trindad                                                    |
 | **Profissão:**    | Especialista em Segurança Cibernética                          |
-| **Especialidade:**   | Code Review, Web Security, CTF, Fintechs, Pirataria (☠️) <br> DevSecOps, Security Champions, SSDLC, Pentest, Red Team     |
+| **Especialidade:**   | Code Review, Web Security, CTF, Fintechs, Pirataria (☠️) <br> DevSecOps, Security Champions, SSDLC, Pentest, Red Team.     |
 
 <div class="alert alert-info" role="alert">
 Sou apenas mais um hacker no mundo que curte segurança e se diverte no que faz. Atualmente, estou me especializando em segurança de aplicações web, com foco específico em code review. Tenho uma forte experiência no setor financeiro e em fintechs, áreas que me desafiam a garantir a integridade e a segurança dos dados em um ambiente altamente dinâmico.
@@ -19,6 +19,7 @@ No meu tempo livre, sou adepto de competições de CTF (Capture The Flag), onde 
 Quando não estou imerso em códigos ou CTFs, você pode me encontrar no meu navio pirata, apreciando o mar com um copo de rum na mão, refletindo sobre os próximos passos e novas possibilidades. 🏴‍☠️⚓
 <br><br>
 </div>
+<br>
 
 ## Certificações & Cursos
 
@@ -29,7 +30,7 @@ Quando não estou imerso em códigos ou CTFs, você pode me encontrar no meu nav
 | **EHPX** | GoHacking            | Julho 2019        |
 | **Web API Exploitation** | Sec4US   | Abril 2021      |
 
-
+<br>
 
 ## Experiência Profissional
 
@@ -46,18 +47,19 @@ Consulte o meu [LinkedIn](https://www.linkedin.com/in/allan-trindad-7296091bb/de
 
 # Contribuições e Projetos
 Para mais detalhes de cada projeto, basta clicar nas imagens ou nos links que você terá acesso a mais detalhes de cada um.
+<br>
 
 ## 🌐 Open Source
 Aqui estão projetos pessoais que criei e contribuições em projetos abertos.
 
 - **Ferramentas**
-    - [Sunny Report](https://github.com/parad0x-0xff/Sunny-Report)
-    - [Query Controller](https://github.com/parad0x-0xff/QueryController)
+    - [Sunny Report](https://github.com/parad0x-0xff/Sunny-Report): Ferramenta para criação de reporte para pentest.
+    - [Query Controller](https://github.com/parad0x-0xff/QueryController): Ferramenta para fuzzing de query strings.
 
-- **OWASP Top 10**
+- **OWASP Top 10 commits**
     - [Fix pt-br content](https://github.com/OWASP/Top10/pull/755/commits/984f998eeb3d4c51ffea03745121649cccb58c33)
     - [Add A7, A8 e A9 pt-br](https://github.com/OWASP/Top10/pull/740/commits/2ef0da054f7905980b142fd647fa6837f1d98925)
-
+<br><br>
 
 ## 💡 Internos
 Aqui estão os projetos que realizei durante minha carreira para solucionar
@@ -67,9 +69,11 @@ problemas nas empresas das quais eu trabalhei.
 |---------------------|------------------|-------------|----------------|
 | <a href="/dropdown/2025-01-01-Projects.html"> <img width="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F001%2F218%2F694%2Foriginal%2Funder-construction-warning-sign-vector.jpg&f=1&nofb=1&ipt=553cb72c5fdd9eb0861e2bfa6097dc18ae2b75b683fe07352f4fe4ae004deb1d&ipo=images"/> Simulação de uma sistema de fraude para demonstração de impacto financeiro e reputacional.</a> | <a href="/dropdown/2025-01-01-Projects.html"> <img width="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F001%2F218%2F694%2Foriginal%2Funder-construction-warning-sign-vector.jpg&f=1&nofb=1&ipt=553cb72c5fdd9eb0861e2bfa6097dc18ae2b75b683fe07352f4fe4ae004deb1d&ipo=images"/> Modelo que ajuda a medir a maturidade do aplicativo mobile e das suas respectivas defesas. </a> |<a href="/dropdown/2025-01-01-Projects.html"> <img width="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F001%2F218%2F694%2Foriginal%2Funder-construction-warning-sign-vector.jpg&f=1&nofb=1&ipt=553cb72c5fdd9eb0861e2bfa6097dc18ae2b75b683fe07352f4fe4ae004deb1d&ipo=images"/>Implementação de pipeline DAST + Scan em API autenticado. </a> |<a href="/dropdown/2025-01-01-Projects.html"> <img width="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F001%2F218%2F694%2Foriginal%2Funder-construction-warning-sign-vector.jpg&f=1&nofb=1&ipt=553cb72c5fdd9eb0861e2bfa6097dc18ae2b75b683fe07352f4fe4ae004deb1d&ipo=images"/> Criação de modelo de report para pentest.</a>|
 
+<br>
+
 ## 📚 Palestras
 Palestras que tive a oportunidade de ministrar podendo compartilhar um pouco do que
-aprendi com as outras pessoas.
+aprendi com as outras pessoas. Lugares que palestrei: [H2HC](https://www.h2hc.com.br/), [Ekoparty](https://ekoparty.org/) e [Boitatech](https://boitatech.com/)
 
 | Secure mobile pipeline | From Time to Binary | Lições de uma CVE | Seu pentest não vale nada! | Code Review |
 |--------|--------|-------|---|---|---|
