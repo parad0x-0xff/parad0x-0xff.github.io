@@ -10,11 +10,12 @@ title: About Me
 | **Nome:**         | Allan Trindad                                                    |
 | **Profissão:**    | Especialista em Segurança Cibernética                          |
 | **Especialidade:**   | Code Review, Web Security, CTF, Fintechs, Pirataria (☠️) <br> DevSecOps, Security Champions, SSDLC, Pentest, Red Team.     |
+| **Experiência:**| +7 anos de experiência de mercado. |
 
 <div class="alert alert-info" role="alert">
 Sou apenas mais um hacker no mundo que curte segurança e se diverte no que faz. Atualmente, estou me especializando em segurança de aplicações web, com foco específico em code review. Tenho uma forte experiência no setor financeiro e em fintechs, áreas que me desafiam a garantir a integridade e a segurança dos dados em um ambiente altamente dinâmico.
 <br><br>
-No meu tempo livre, sou adepto de competições de CTF (Capture The Flag), onde busco aprimorar minhas habilidades técnicas e estratégias. Também sou um ávido leitor, com uma coleção crescente de livros e cursos sobre cibersegurança, que um dia pretendo explorar por completo… mas por enquanto, o tempo é sempre curto. 😅
+No meu tempo livre, sou adepto de competições de CTF (Capture The Flag), onde busco aprimorar minhas habilidades técnicas e estratégias.
 <br><br>
 Quando não estou imerso em códigos ou CTFs, você pode me encontrar no meu navio pirata, apreciando o mar com um copo de rum na mão, refletindo sobre os próximos passos e novas possibilidades. 🏴‍☠️⚓
 <br><br>
@@ -41,7 +42,7 @@ Quando não estou imerso em códigos ou CTFs, você pode me encontrar no meu nav
 - KPMG
 - Deloitte
 
-Consulte o meu [LinkedIn](https://www.linkedin.com/in/allan-trindad-7296091bb/details/experience/) para mais detalhes
+Consulte o meu [LinkedIn](https://www.linkedin.com/in/allan-trindad-7296091bb/) para mais detalhes
 
 ---
 
@@ -65,9 +66,9 @@ Aqui estão projetos pessoais que criei e contribuições em projetos abertos.
 Aqui estão os projetos que realizei durante minha carreira para solucionar
 problemas nas empresas das quais eu trabalhei.
 
-| Fraude as a Service | Mobile Framework | DAST + Auth | Pentest Report |
-|---------------------|------------------|-------------|----------------|
-| <a href="/dropdown/2025-01-01-Projects.html"> <img width="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F001%2F218%2F694%2Foriginal%2Funder-construction-warning-sign-vector.jpg&f=1&nofb=1&ipt=553cb72c5fdd9eb0861e2bfa6097dc18ae2b75b683fe07352f4fe4ae004deb1d&ipo=images"/> Simulação de uma sistema de fraude para demonstração de impacto financeiro e reputacional.</a> | <a href="/dropdown/2025-01-01-Projects.html"> <img width="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F001%2F218%2F694%2Foriginal%2Funder-construction-warning-sign-vector.jpg&f=1&nofb=1&ipt=553cb72c5fdd9eb0861e2bfa6097dc18ae2b75b683fe07352f4fe4ae004deb1d&ipo=images"/> Modelo que ajuda a medir a maturidade do aplicativo mobile e das suas respectivas defesas. </a> |<a href="/dropdown/2025-01-01-Projects.html"> <img width="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F001%2F218%2F694%2Foriginal%2Funder-construction-warning-sign-vector.jpg&f=1&nofb=1&ipt=553cb72c5fdd9eb0861e2bfa6097dc18ae2b75b683fe07352f4fe4ae004deb1d&ipo=images"/>Implementação de pipeline DAST + Scan em API autenticado. </a> |<a href="/dropdown/2025-01-01-Projects.html"> <img width="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F001%2F218%2F694%2Foriginal%2Funder-construction-warning-sign-vector.jpg&f=1&nofb=1&ipt=553cb72c5fdd9eb0861e2bfa6097dc18ae2b75b683fe07352f4fe4ae004deb1d&ipo=images"/> Criação de modelo de report para pentest.</a>|
+| Mobile Framework |Fraude as a Service| DAST + Auth | Pentest Report |
+|------------------|-- -----------------|-------------|----------------|
+| <a href="/dropdown/2024-08-01-Mobile-Framework.html"> <img src="/assets/img/android-ios.png" height="150" width="180"/> Modelo que ajuda a medir a maturidade do aplicativo mobile e das suas respectivas defesas. </a> |<a href="/dropdown/2023-09-14-FaaS.html"> <img src="/assets/img/fraude.jpg" height="300" width="300" /> Simulação de uma sistema de fraude para demonstração de impacto financeiro e reputacional.</a> |<a href="/dropdown/2020-10-18-Dast-Auth.html"> <img src="/assets/img/zapproxy.png" height="150" width="150"/>Implementação de pipeline DAST + Scan em API autenticado. </a> |<a href="/dropdown/2023-03-04-pentest-report.html"> <img src="/assets/img/sunny.png" height="200" width="250"/> Criação de modelo de report para pentest.</a>|
 
 <br>
 
