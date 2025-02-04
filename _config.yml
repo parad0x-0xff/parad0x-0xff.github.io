@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Blog Pirata
-author: "parad0x_0xff"
+author: "parad0x-0xff"
 email: "allan_trindad@proton.me"
 description: Navio Pirata!
 baseurl: ""
@@ -22,12 +22,12 @@ url: "https://blog.parad0x.vip/" # github pages
 
 # ------------------------------------------------------------------------------
 # Custom settings
-# ------------------------------------------------------------------------------
+# ---------------------------------------hjbn---------------------------------------
 # Useful links
 github_username: "parad0x-0xff"
 facebook_username: "zuck"
 twitter_username: "parad0x_0xff"
-linkedin_id: "in/ryanroslansky?trk=author_mini-profile_title&challengeId=AQHVAim4lVOTcQAAAXT2UtZxd6mmsWrqUJyqZgGHRxVb_yi5LVfJUzJfxve8-u51BVftxzmBEt484qmaPIoh7YRxT7iCWjCKsg&submissionId=03a07872-99f3-3a16-2a96-cb504675385c"
+linkedin_id: "in/allan-trindad-7296091bb/"
 
 # Theme
 # theme: jekyll-theme-potato-hacker                 # Uncomment this
