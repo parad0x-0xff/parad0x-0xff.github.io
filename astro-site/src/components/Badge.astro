@@ -1,0 +1,57 @@
+---
+interface Props {
+  variant: 'category' | 'difficulty' | 'tag';
+  value: string;
+}
+const { variant, value } = Astro.props as Props;
+
+const categoryLabels: Record<string, string> = {
+  tutorial: 'tutorial',
+  writeup: 'writeup',
+  project: 'projeto',
+  idea: 'ideia',
+};
+
+const difficultyColor: Record<string, string> = {
+  easy: 'var(--status-success)',
+  medium: 'var(--status-warning)',
+  hard: 'var(--status-danger)',
+};
+
+const label =
+  variant === 'category' ? categoryLabels[value] ?? value :
+  variant === 'difficulty' ? value :
+  value;
+
+const dotColor =
+  variant === 'difficulty' ? difficultyColor[value] ?? 'var(--text-tertiary)' :
+  variant === 'category' ? 'var(--accent)' :
+  'var(--text-tertiary)';
+---
+<span class={`badge badge-${variant}`}>
+  <span class="dot" style={`background:${dotColor}`}></span>
+  {label}
+</span>
+
+<style>
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-secondary);
+    background: var(--bg-surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    padding: 0.15em 0.7em;
+  }
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+</style>

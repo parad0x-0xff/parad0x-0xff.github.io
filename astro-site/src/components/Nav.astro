@@ -1,0 +1,245 @@
+---
+import { getCollection } from 'astro:content';
+import { getTopicCounts, getOtherPosts } from '../lib/blog';
+
+const path = Astro.url.pathname;
+const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+
+const posts = (await getCollection('blog')).filter((p) => !p.data.draft);
+const topicCounts = getTopicCounts(posts);
+const otherCount = getOtherPosts(posts).length;
+---
+<nav class="nav" id="site-nav" transition:persist>
+  <a class="brand" href="/"><span class="prompt">$</span> parad0x</a>
+
+  <button id="nav-toggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+    <span class="sr-only">Menu</span>☰
+  </button>
+
+  <div class="links" id="nav-links">
+    <a href="/" data-nav-link class:list={{ active: isActive('/') && path === '/' }}>home</a>
+
+    <details class="nav-dropdown" data-nav-dropdown>
+      <summary class:list={{ active: isActive('/blog/') }}>blog</summary>
+      <div class="dropdown-panel">
+        <a href="/blog/">ver tudo</a>
+        <a href="/blog/#recentes">recentes</a>
+        {topicCounts.map((t) => (
+          <a href={`/blog/#${t.value}`}>{t.label} ({t.count})</a>
+        ))}
+        {otherCount > 0 && <a href="/blog/#outros">projetos &amp; outros ({otherCount})</a>}
+      </div>
+    </details>
+
+    {import.meta.env.DEV && (
+      <a href="/comece-aqui/" data-nav-link class:list={{ active: isActive('/comece-aqui/') }}>comece aqui</a>
+    )}
+    <a href="/about/" data-nav-link class:list={{ active: isActive('/about/') }}>about</a>
+    <button id="theme-toggle" type="button" aria-label="Alternar tema">◐</button>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('theme-toggle');
+  btn?.addEventListener('click', () => {
+    const root = document.documentElement;
+    const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  navToggle?.addEventListener('click', () => {
+    const open = navLinks?.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(!!open));
+  });
+
+  // Nav persists across client-side navigations (transition:persist), so its
+  // server-rendered .active class freezes on the first page's path, and any
+  // open dropdown/hamburger state would otherwise leak into the next page.
+  // Resync/reset both on every swap.
+  function syncActiveLinks() {
+    const path = location.pathname;
+    document.querySelectorAll<HTMLAnchorElement>('#site-nav [data-nav-link]').forEach((a) => {
+      const href = a.getAttribute('href')!;
+      const active = href === '/' ? path === '/' : path.startsWith(href);
+      a.classList.toggle('active', active);
+    });
+    const dropdownSummary = document.querySelector('#site-nav [data-nav-dropdown] summary');
+    dropdownSummary?.classList.toggle('active', path.startsWith('/blog/'));
+  }
+
+  function closeMenus() {
+    document.querySelectorAll<HTMLDetailsElement>('#site-nav [data-nav-dropdown]').forEach((d) => {
+      d.removeAttribute('open');
+    });
+    navLinks?.classList.remove('open');
+    navToggle?.setAttribute('aria-expanded', 'false');
+  }
+
+  document.addEventListener('astro:after-swap', () => {
+    syncActiveLinks();
+    closeMenus();
+  });
+</script>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4) var(--space-6);
+    background: color-mix(in srgb, var(--bg-canvas) 70%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .brand {
+    font-family: var(--font-mono);
+    font-weight: var(--fw-medium);
+    color: var(--text-primary);
+  }
+  .brand:hover { text-decoration: none; }
+  .prompt { color: var(--accent); }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    border-radius: var(--radius-md);
+    width: 36px;
+    height: 32px;
+    cursor: pointer;
+    font-size: var(--text-sm);
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+  }
+  .links > a {
+    color: var(--text-secondary);
+    text-transform: lowercase;
+  }
+  .links > a:hover, .links > a.active {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .nav-dropdown {
+    position: relative;
+  }
+  .nav-dropdown summary {
+    cursor: pointer;
+    color: var(--text-secondary);
+    text-transform: lowercase;
+    list-style: none;
+  }
+  .nav-dropdown summary::-webkit-details-marker { display: none; }
+  .nav-dropdown summary::after {
+    content: ' ▾';
+  }
+  .nav-dropdown summary:hover, .nav-dropdown summary.active {
+    color: var(--accent);
+  }
+  .nav-dropdown[open] summary::after {
+    content: ' ▴';
+  }
+  .dropdown-panel {
+    position: absolute;
+    top: calc(100% + var(--space-3));
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    min-width: 200px;
+    padding: var(--space-3);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+  .dropdown-panel a {
+    padding: var(--space-2) var(--space-2);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    text-transform: none;
+  }
+  .dropdown-panel a:hover {
+    background: var(--bg-surface-raised);
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  #theme-toggle {
+    background: none;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    border-radius: var(--radius-full);
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: var(--text-sm);
+    line-height: 1;
+  }
+  #theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* mobile breakpoint — reused by PostToc's collapse point too, keep in sync */
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: block;
+    }
+    .links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      background: var(--bg-canvas);
+      border-bottom: 1px solid var(--border-subtle);
+      max-height: 0;
+      overflow: hidden;
+    }
+    .links.open {
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    .links > a, .nav-dropdown summary {
+      padding: var(--space-4) var(--space-6);
+      border-top: 1px solid var(--border-subtle);
+    }
+    .nav-dropdown {
+      width: 100%;
+    }
+    .dropdown-panel {
+      position: static;
+      border: none;
+      box-shadow: none;
+      background: var(--bg-surface-raised);
+      padding: 0 0 var(--space-2) var(--space-6);
+    }
+    #theme-toggle {
+      margin: var(--space-4) var(--space-6);
+    }
+  }
+</style>

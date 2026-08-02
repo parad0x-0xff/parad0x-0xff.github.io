@@ -1,0 +1,29 @@
+---
+---
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar" id="reading-progress-bar"></div>
+</div>
+
+<script src="/reading-progress.js" defer></script>
+
+<style>
+  .reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    height: 3px;
+    background: transparent;
+  }
+  .reading-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .reading-progress-bar {
+      transition: width 0.1s linear;
+    }
+  }
+</style>
