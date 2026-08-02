@@ -1,0 +1,89 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PostCard from '../../components/PostCard.astro';
+import TerminalSearch from '../../components/TerminalSearch.astro';
+import { getCollection } from 'astro:content';
+import {
+  getRecentPosts,
+  getPostsByTopic,
+  getOtherPosts,
+  getTopicLabel,
+  getReadingTime,
+  TOPICS,
+  type BlogPost,
+} from '../../lib/blog';
+
+const posts = (await getCollection('blog')).filter((p) => !p.data.draft);
+
+function buildSearchKey(post: BlogPost): string {
+  const raw = `${post.data.title} ${post.data.category} ${post.data.tags.join(' ')}`;
+  return raw
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '');
+}
+
+const outros = getOtherPosts(posts);
+
+const allSections = [
+  { id: 'recentes', label: 'Recentes', posts: getRecentPosts(posts, 5) },
+  ...TOPICS.map((topic) => ({
+    id: topic,
+    label: getTopicLabel(topic),
+    posts: getPostsByTopic(posts, topic),
+  })).filter((s) => s.posts.length > 0),
+  ...(outros.length > 0 ? [{ id: 'outros', label: 'Projetos & Outros', posts: outros }] : []),
+];
+---
+<Layout title="Blog">
+  <h1>Blog</h1>
+  <TerminalSearch />
+
+  {allSections.map((s) => (
+    <section id={s.id} data-section>
+      <h2><span class="prompt">$</span> ls {s.id}/ <small>({s.posts.length})</small></h2>
+      <div class="grid">
+        {s.posts.map((post) => (
+          <div class="card-slot reveal" data-search={buildSearchKey(post)}>
+            <PostCard
+              title={post.data.title}
+              href={`/blog/${post.id}/`}
+              pubDate={post.data.pubDate}
+              tags={post.data.tags}
+              category={post.data.category}
+              difficulty={post.data.difficulty}
+              readingTime={getReadingTime(post)}
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+  ))}
+</Layout>
+
+<style>
+  h1 { margin-bottom: var(--space-6); }
+
+  section[data-section] {
+    margin-bottom: var(--space-12);
+    scroll-margin-top: var(--space-16);
+  }
+  section[data-section] h2 {
+    font-size: var(--text-lg);
+    font-family: var(--font-mono);
+    margin-bottom: var(--space-4);
+  }
+  section[data-section] h2 .prompt {
+    color: var(--accent);
+  }
+  section[data-section] h2 small {
+    color: var(--text-tertiary);
+    font-weight: var(--fw-regular);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+  }
+</style>

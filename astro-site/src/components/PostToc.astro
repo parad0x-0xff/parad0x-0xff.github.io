@@ -1,0 +1,126 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+interface Props {
+  headings: Heading[];
+}
+const { headings } = Astro.props as Props;
+---
+<nav class="post-toc" aria-label="Sumário">
+  <p class="toc-label"><span class="prompt">$</span> sumário</p>
+  <ul>
+    {headings.map((h) => (
+      <li class={`depth-${h.depth}`}>
+        <a href={`#${h.slug}`} data-toc-link={h.slug}>{h.text}</a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<details class="post-toc-mobile">
+  <summary>Sumário</summary>
+  <ul>
+    {headings.map((h) => (
+      <li class={`depth-${h.depth}`}>
+        <a href={`#${h.slug}`}>{h.text}</a>
+      </li>
+    ))}
+  </ul>
+</details>
+
+<script src="/post-toc.js" defer></script>
+
+<style>
+  .post-toc {
+    position: sticky;
+    top: calc(64px + var(--space-6));
+    align-self: start;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+  }
+  .toc-label {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-3);
+  }
+  .toc-label .prompt {
+    color: var(--accent);
+  }
+  .post-toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 2px solid var(--border-subtle);
+  }
+  .post-toc li {
+    margin: 0;
+  }
+  .post-toc a {
+    display: block;
+    padding: var(--space-1) var(--space-3);
+    margin-left: -2px;
+    color: var(--text-tertiary);
+    border-left: 2px solid transparent;
+  }
+  .post-toc a:hover {
+    color: var(--text-secondary);
+    text-decoration: none;
+  }
+  .post-toc a.active {
+    color: var(--accent);
+    border-left-color: var(--accent);
+  }
+  .post-toc li.depth-1 a {
+    font-weight: var(--fw-medium);
+  }
+  .post-toc li.depth-2 a {
+    padding-left: var(--space-5);
+  }
+  .post-toc li.depth-3 a {
+    padding-left: var(--space-8);
+  }
+
+  .post-toc-mobile {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .post-toc {
+      display: none;
+    }
+    .post-toc-mobile {
+      display: block;
+      margin-bottom: var(--space-6);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: var(--space-3) var(--space-4);
+    }
+    .post-toc-mobile summary {
+      cursor: pointer;
+      font-family: var(--font-mono);
+      color: var(--text-secondary);
+    }
+    .post-toc-mobile ul {
+      list-style: none;
+      margin: var(--space-3) 0 0;
+      padding: 0;
+    }
+    .post-toc-mobile a {
+      display: block;
+      padding: var(--space-2) 0;
+      color: var(--text-tertiary);
+    }
+    .post-toc-mobile li.depth-1 a {
+      font-weight: var(--fw-medium);
+    }
+    .post-toc-mobile li.depth-2 a {
+      padding-left: var(--space-3);
+    }
+    .post-toc-mobile li.depth-3 a {
+      padding-left: var(--space-6);
+    }
+  }
+</style>

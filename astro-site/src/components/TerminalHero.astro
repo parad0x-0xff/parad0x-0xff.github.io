@@ -1,0 +1,182 @@
+---
+
+---
+
+<section class="terminal-hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <p class="eyebrow">
+        <span class="eyebrow-line"></span>Segurança ofensiva &amp; code review
+      </p>
+      <h1>
+        Hackers são<br />
+        <span class="word-accent">piratas</span> do código
+      </h1>
+      <p class="hero-desc">
+        Escrevo sobre secure code review, pentest whitebox e exploração de
+        vulnerabilidades reais — compartilhando conhecimento em português para
+        fortalecer a comunidade.
+      </p>
+      <a class="hero-cta" href="/blog/"
+        >Ler o blog <span class="arrow">↗</span></a
+      >
+    </div>
+
+    <div class="terminal-window">
+      <div class="titlebar">
+        <span class="dot dot-r"></span>
+        <span class="dot dot-y"></span>
+        <span class="dot dot-g"></span>
+        <span class="terminal-title">PARAD0X // WHOAMI</span>
+      </div>
+      <div class="body">
+        <span class="rl rl-sys">&gt; SISTEMA: BLOG PIRATA v3.0</span>
+        <span class="rl rl-sys">&gt; IDENTIFICANDO OPERADOR...</span>
+        <span class="rl rl-dim">&nbsp;[████████████████████] 100%</span>
+        <span class="rl rl-green">&gt; OPERADOR: PARAD0X — ALLAN TRINDAD</span>
+        <span class="rl rl-empty"></span>
+        <span class="rl rl-white">&gt; ESPECIALISTA EM SEGURANÇA OFENSIVA.</span
+        >
+        <span class="rl rl-white">&gt; CODE REVIEW, DEVSECOPS E ARQUITETO.</span
+        >
+        <span class="rl rl-empty"></span>
+        <span class="rl rl-sys">&gt; MISSÃO: DISSEMINAR CONHECIMENTO.</span>
+        <span class="rl rl-sys">&gt; CERTIFICAÇÕES: OSCP · DCPT · EHPX</span>
+        <span class="rl rl-empty"></span>
+        <span class="rl rl-green"
+          >&gt; BEM-VINDO AO BLOG PIRATA.<span class="t-cursor">_</span></span
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .terminal-hero {
+    padding: var(--space-16) 0;
+  }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin: 0 0 var(--space-6);
+  }
+  .eyebrow-line {
+    width: 28px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+  }
+
+  .hero-left h1 {
+    font-size: clamp(2.4rem, 4.5vw, var(--text-5xl));
+    font-weight: var(--fw-regular);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin: 0 0 var(--space-6);
+  }
+  .word-accent {
+    font-weight: var(--fw-bold);
+    background: linear-gradient(
+      120deg,
+      var(--c-green-400),
+      var(--c-green-500) 45%,
+      var(--c-green-300)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-desc {
+    color: var(--text-secondary);
+    font-size: var(--text-md);
+    line-height: 1.75;
+    max-width: 42ch;
+    margin: 0 0 var(--space-8);
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    background: var(--accent);
+    color: var(--text-on-accent);
+    font-weight: var(--fw-semibold);
+    box-shadow: var(--glow-accent);
+    transition:
+      background-color 0.15s ease,
+      box-shadow 0.15s ease,
+      transform 0.15s ease;
+  }
+  .hero-cta:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 0 24px rgba(79, 180, 24, 0.45);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+  .hero-cta .arrow {
+    transition: transform 0.15s ease;
+  }
+  .hero-cta:hover .arrow {
+    transform: translate(2px, -2px);
+  }
+
+  .terminal-window .terminal-title {
+    margin-left: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+    letter-spacing: 0.05em;
+  }
+  .terminal-window .body {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-5) var(--space-6);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: 2;
+    min-height: 300px;
+  }
+  .rl-sys {
+    color: var(--text-secondary);
+  }
+  .rl-white {
+    color: var(--text-primary);
+    font-weight: var(--fw-medium);
+  }
+  .rl-green {
+    color: var(--accent);
+  }
+  .rl-dim {
+    color: var(--c-grey-600);
+  }
+  .rl-empty {
+    height: 0.5em;
+  }
+  .rl-accept {
+    color: var(--accent-strong);
+    font-weight: var(--fw-bold);
+    text-shadow: var(--glow-accent);
+  }
+
+  @media (max-width: 800px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-10);
+    }
+  }
+</style>

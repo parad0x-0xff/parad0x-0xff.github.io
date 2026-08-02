@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ReadingProgress from '../../components/ReadingProgress.astro';
+import PostToc from '../../components/PostToc.astro';
+import { getCollection, render } from 'astro:content';
+import { getReadingTime, getSeriesNav } from '../../lib/blog';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+const tocHeadings = headings.filter((h) => h.depth <= 3);
+const showToc = tocHeadings.length >= 2;
+const readingTime = getReadingTime(post);
+
+const allPosts = await getCollection('blog');
+const { prev, next } = getSeriesNav(post, allPosts);
+---
+<Layout title={post.data.title}>
+  <ReadingProgress />
+  <div class="post-layout" class:list={{ 'has-toc': showToc }}>
+    <article class="post-content">
+      <a href="/blog/">&larr; voltar</a>
+      <h1>{post.data.title}</h1>
+      <p><small>{post.data.pubDate.toLocaleDateString('pt-BR')} · {readingTime} min de leitura</small></p>
+      <Content />
+
+      {(prev || next) && (
+        <nav class="series-nav" aria-label="Continuação da série">
+          {prev ? (
+            <a class="series-link prev" href={`/blog/${prev.id}/`}>
+              <small>&larr; parte anterior</small>
+              <span>{prev.data.title}</span>
+            </a>
+          ) : <span />}
+          {next && (
+            <a class="series-link next" href={`/blog/${next.id}/`}>
+              <small>próxima parte &rarr;</small>
+              <span>{next.data.title}</span>
+            </a>
+          )}
+        </nav>
+      )}
+    </article>
+    {showToc && <PostToc headings={tocHeadings} />}
+  </div>
+</Layout>
+
+<style>
+  .post-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  @media (min-width: 769px) {
+    .post-layout.has-toc {
+      grid-template-columns: 1fr 200px;
+      align-items: start;
+    }
+  }
+
+  .series-nav {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-10);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--border-subtle);
+  }
+  .series-link {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-4);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    color: var(--text-primary);
+  }
+  .series-link:hover {
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+  .series-link small {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .series-link.next {
+    text-align: right;
+    margin-left: auto;
+  }
+</style>

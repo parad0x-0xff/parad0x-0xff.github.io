@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Página em ajuste — visível só em `astro dev`. Em `astro build`/preview
+// (import.meta.env.DEV === false), redireciona pra home em vez de publicar
+// o conteúdo. Remove esse bloco quando a página estiver pronta pra subir.
+if (!import.meta.env.DEV) {
+  return Astro.redirect('/', 302);
+}
+
+const trilhas = [
+  {
+    title: 'Iniciante — primeiros passos',
+    blurb: 'Fundamentos de code review e o primeiro contato com pentest. Comece por aqui se você tá começando na área.',
+    posts: [
+      { title: 'O que é code review?', href: '/blog/2020-10-10-what-is-code-review/' },
+      { title: 'Estratégias de um code review', href: '/blog/2020-10-17-methods-code-review/' },
+      { title: 'OWASP ZAP', href: '/blog/2020-10-18-owaspzap/' },
+      { title: 'Vulnado Parte 1', href: '/blog/2021-03-24-vulnado/' },
+      { title: 'Food Store', href: '/blog/2024-08-15-foodstore/' },
+    ],
+  },
+  {
+    title: 'Intermediário — mão na massa',
+    blurb: 'Writeups de CTF e mobile com mais camada. Pra quem já entende o básico e quer treinar exploração de verdade.',
+    posts: [
+      { title: 'Damm Vulnerable WebSocket', href: '/blog/2021-01-28-dvws/' },
+      { title: 'UnCrackable L1 Parte 1', href: '/blog/2024-01-14-uncrackable-l1/' },
+      { title: 'Guess Me Parte 1', href: '/blog/2024-09-10-guessme/' },
+      { title: 'Post Board parte 1', href: '/blog/2024-10-01-postboard1/' },
+      { title: 'Vulnado Parte 2', href: '/blog/2021-03-28-vulnado2/' },
+    ],
+  },
+  {
+    title: 'Avançado — aprofundando e carreira',
+    blurb: 'CVE real, IoT, e os bastidores de projetos de carreira. Pra quem já manja e quer ver como isso vira profissão.',
+    posts: [
+      { title: 'Vulnado Parte 3', href: '/blog/2021-03-30-vulnado3/' },
+      { title: 'IOT Connect', href: '/blog/2024-08-06-iot-connect/' },
+      { title: 'CVE-2022-26352', href: '/blog/2022-07-20-cve-2022-26352/' },
+      { title: 'Mobile Framework (projeto)', href: '/blog/2024-08-01-mobile-framework/' },
+      { title: 'Pentest Report (projeto)', href: '/blog/2023-03-04-pentest-report/' },
+    ],
+  },
+];
+---
+<Layout title="Comece aqui">
+  <section class="post-content">
+    <h1>Comece aqui</h1>
+    <p>
+      Três trilhas de leitura, do zero até projeto de carreira. Não precisa seguir
+      na ordem — mas se você não sabe por onde começar, essa é a sequência que eu
+      recomendaria pra mim mesmo há uns anos atrás.
+    </p>
+  </section>
+
+  <div class="trilhas">
+    {trilhas.map((trilha, i) => (
+      <section class="trilha">
+        <h2><span class="prompt">$</span> trilha-{i + 1} — {trilha.title}</h2>
+        <p class="blurb">{trilha.blurb}</p>
+        <ol>
+          {trilha.posts.map((post) => (
+            <li><a href={post.href}>{post.title}</a></li>
+          ))}
+        </ol>
+      </section>
+    ))}
+  </div>
+</Layout>
+
+<style>
+  .trilhas {
+    max-width: 68ch;
+    margin: var(--space-8) auto 0;
+  }
+  .trilha {
+    margin-bottom: var(--space-10);
+    padding: var(--space-6);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+  }
+  .trilha h2 {
+    font-size: var(--text-lg);
+    font-family: var(--font-mono);
+    margin: 0 0 var(--space-3);
+  }
+  .trilha h2 .prompt {
+    color: var(--accent);
+  }
+  .blurb {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+  .trilha ol {
+    margin: 0;
+    padding-left: var(--space-6);
+  }
+  .trilha li {
+    margin-bottom: var(--space-2);
+  }
+</style>

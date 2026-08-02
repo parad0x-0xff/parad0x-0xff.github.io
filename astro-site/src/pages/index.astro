@@ -1,0 +1,331 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TerminalHero from '../components/TerminalHero.astro';
+import Badge from '../components/Badge.astro';
+import { getCollection } from 'astro:content';
+import { getRecentPosts, getReadingTime, getTopicCounts } from '../lib/blog';
+import { CASES } from '../lib/cases';
+
+const posts = (await getCollection('blog')).filter((p) => !p.data.draft);
+const recentPosts = getRecentPosts(posts, 6);
+const featuredCases = CASES;
+
+const totalPosts = posts.length;
+const topicsCovered = getTopicCounts(posts).length;
+const firstYear = Math.min(...posts.map((p) => p.data.pubDate.getFullYear()));
+const yearsWriting = new Date().getFullYear() - firstYear + 1;
+const daysSinceLast = Math.floor(
+  (Date.now() - recentPosts[0].data.pubDate.valueOf()) / 86_400_000
+);
+---
+<Layout title="Home">
+  <TerminalHero />
+
+  <div class="section-head">
+    <span class="section-title">Principais cases</span>
+  </div>
+  <div class="carousel">
+    <button class="car-btn car-prev" type="button" aria-label="Case anterior">‹</button>
+    <div class="cases" id="cases-track">
+      {featuredCases.map((c) => (
+        <a class="case-card reveal" href={c.href}>
+          <div class="case-content">
+            <h2>{c.title}</h2>
+            <p>{c.desc}</p>
+            <div class="case-stack">
+              {c.stack.map((s) => <span class="stack-tag">{s}</span>)}
+            </div>
+            <span class="case-arrow">Ler case <span>→</span></span>
+          </div>
+          <div class="case-visual">
+            <img src={c.img} alt={c.title} loading="lazy" />
+          </div>
+        </a>
+      ))}
+    </div>
+    <button class="car-btn car-next" type="button" aria-label="Próximo case">›</button>
+  </div>
+
+  <script>
+    const track = document.getElementById('cases-track');
+    const step = () => Math.min(track?.clientWidth ?? 560, 560) + 16;
+    document.querySelector('.car-prev')?.addEventListener('click', () => {
+      track?.scrollBy({ left: -step(), behavior: 'smooth' });
+    });
+    document.querySelector('.car-next')?.addEventListener('click', () => {
+      track?.scrollBy({ left: step(), behavior: 'smooth' });
+    });
+  </script>
+
+  <div class="section-head" style="margin-top: var(--space-12)">
+    <span class="section-title">Posts recentes</span>
+    <a class="section-link" href="/blog/">ver tudo →</a>
+  </div>
+  <div class="posts-grid">
+    {recentPosts.map((post) => (
+      <a class="post-tile reveal" href={`/blog/${post.id}/`}>
+        <div class="tile-status">● publicado</div>
+        <h3>{post.data.title}</h3>
+        <p class="tile-meta">
+          {post.data.pubDate.toLocaleDateString('pt-BR')} · {getReadingTime(post)} min
+        </p>
+        <div class="tile-tags">
+          <Badge variant="category" value={post.data.category} />
+          {post.data.tags.slice(0, 2).map((t) => <Badge variant="tag" value={t} />)}
+        </div>
+        <span class="tile-action">Ler mais <span>→</span></span>
+      </a>
+    ))}
+  </div>
+
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-value">{totalPosts}</div>
+      <div class="stat-label">posts publicados</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">{topicsCovered}</div>
+      <div class="stat-label">temas cobertos</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">{yearsWriting}+</div>
+      <div class="stat-label">anos escrevendo</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">{daysSinceLast}d atrás</div>
+      <div class="stat-label">última publicação</div>
+    </div>
+  </div>
+
+  <blockquote class="aviso">
+    Todos os artigos escritos aqui se limitam apenas para fins educativos,
+    não me responsabilizando pelo uso indevido das informações escritas aqui.
+  </blockquote>
+</Layout>
+
+<style>
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: var(--space-6);
+  }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+  }
+  .section-title::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--border-subtle);
+  }
+  .section-link {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--accent);
+  }
+
+  .carousel {
+    position: relative;
+  }
+  .cases {
+    display: flex;
+    gap: var(--space-4);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: var(--space-1);
+    padding-bottom: var(--space-2);
+    scrollbar-width: none;
+  }
+  .cases::-webkit-scrollbar {
+    display: none;
+  }
+  .car-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background: var(--bg-surface-raised);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    font-size: var(--text-lg);
+    line-height: 1;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .car-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .car-prev { left: calc(-1 * var(--space-5)); }
+  .car-next { right: calc(-1 * var(--space-5)); }
+  @media (max-width: 900px) {
+    .car-btn { display: none; }
+  }
+  .case-card {
+    flex: 0 0 min(560px, 86vw);
+    scroll-snap-align: start;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    color: inherit;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .case-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  .case-content {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+  }
+  .case-content h2 {
+    margin: 0 0 var(--space-3);
+    font-size: var(--text-xl);
+  }
+  .case-content p {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: 1.7;
+    margin: 0 0 var(--space-5);
+    flex: 1;
+  }
+  .case-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-5);
+  }
+  .stack-tag {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+    padding: 0.15em 0.7em;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+  }
+  .case-arrow {
+    font-size: var(--text-sm);
+    font-weight: var(--fw-medium);
+    color: var(--accent);
+  }
+  .case-visual {
+    background: var(--bg-surface-raised);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+    border-left: 1px solid var(--border-subtle);
+  }
+  .case-visual img {
+    max-width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+  }
+  @media (max-width: 640px) {
+    .case-card { grid-template-columns: 1fr; flex-basis: 92vw; }
+    .case-visual { border-left: none; border-top: 1px solid var(--border-subtle); }
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+  }
+  .post-tile {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    color: inherit;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .post-tile:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  .tile-status {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .post-tile h3 {
+    margin: 0;
+    font-size: var(--text-md);
+    color: var(--text-primary);
+  }
+  .tile-meta {
+    margin: 0;
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+  }
+  .tile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .tile-action {
+    margin-top: auto;
+    font-size: var(--text-xs);
+    font-weight: var(--fw-medium);
+    color: var(--accent);
+  }
+
+  .stats-row {
+    display: flex;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: var(--space-12);
+  }
+  .stat {
+    flex: 1;
+    padding: var(--space-6);
+    border-right: 1px solid var(--border-subtle);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-value {
+    font-size: var(--text-3xl);
+    font-weight: var(--fw-bold);
+    color: var(--accent-strong);
+    line-height: 1;
+    margin-bottom: var(--space-2);
+  }
+  .stat-label {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+  }
+  @media (max-width: 640px) {
+    .stats-row { flex-wrap: wrap; }
+    .stat { flex: 1 1 50%; }
+  }
+
+  .aviso {
+    margin-top: var(--space-4);
+  }
+</style>
