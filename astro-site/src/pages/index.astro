@@ -141,7 +141,7 @@ const daysSinceLast = Math.floor(
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-padding-left: var(--space-1);
-    padding-bottom: var(--space-2);
+    padding: var(--space-2) var(--space-1) var(--space-3);
     scrollbar-width: none;
   }
   .cases::-webkit-scrollbar {
@@ -173,7 +173,7 @@ const daysSinceLast = Math.floor(
     .car-btn { display: none; }
   }
   .case-card {
-    flex: 0 0 min(560px, 86vw);
+    flex: 0 0 min(540px, 84vw);
     scroll-snap-align: start;
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -240,7 +240,7 @@ const daysSinceLast = Math.floor(
     border-radius: var(--radius-md);
   }
   @media (max-width: 640px) {
-    .case-card { grid-template-columns: 1fr; flex-basis: 92vw; }
+    .case-card { grid-template-columns: 1fr; flex-basis: 88vw; }
     .case-visual { border-left: none; border-top: 1px solid var(--border-subtle); }
   }
 
