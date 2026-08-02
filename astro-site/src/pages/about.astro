@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CASES as carreira } from '../lib/cases';
+
+const palestras = [
+  {
+    title: 'Secure mobile pipeline',
+    href: 'https://docs.google.com/presentation/d/1z8MUoA6KhZeN8__JZA5EyYvnJotpFpKT7sx3-doz_Eo/edit#slide=id.g1ff97067bf6_0_579',
+    img: '/assets/img/secure-mobile-pipeline.png',
+    desc: 'Demonstração de uma pipeline para dispositivos mobile.',
+  },
+  {
+    title: 'From Time to Binary',
+    href: 'https://docs.google.com/presentation/d/1KGncsmtx32wSB-f0v446zc9TJBXgJ85keQs0jgUYAMM/edit#slide=id.g2d56dc45c06_0_43',
+    img: '/assets/img/from-time-to-binary.png',
+    desc: 'Aumentando o impacto através de uma função de random inseguro.',
+  },
+  {
+    title: 'Lições de uma CVE',
+    href: 'https://docs.google.com/presentation/d/1h5YNdakjMscTL1cXg8jS7czBTytJJ4zJ/edit#slide=id.p1',
+    img: '/assets/img/cve-lessons.png',
+    desc: 'Como é o processo de identificar um Zero Day!',
+  },
+  {
+    title: 'Seu pentest não vale nada!',
+    href: 'https://docs.google.com/presentation/d/1IgqUBk14SK-FLBOLfVPYoTUD9pgxTzLA/edit#slide=id.g1ea1f851150_0_0',
+    img: '/assets/img/pentest-worthless.png',
+    desc: 'O pentest não tem valor se não souber ser reportado!',
+  },
+  {
+    title: 'Code Review',
+    href: 'https://docs.google.com/presentation/d/1TABCRTsX6gtwud6QEdIACBQoyn6kN0Jv/edit#slide=id.p1',
+    img: '/assets/img/code-review-ppt.png',
+    desc: 'Como realizar um processo de code review.',
+  },
+];
+---
+<Layout title="About Me">
+  <h1>Allan Trindad</h1>
+
+  <dl class="bio">
+    <div><dt>Nome</dt><dd>Allan Trindad</dd></div>
+    <div><dt>Profissão</dt><dd>Especialista em Segurança Cibernética</dd></div>
+    <div><dt>Especialidade</dt><dd>Code Review, Web Security, CTF, Fintechs, Pirataria (☠️)<br />DevSecOps, Security Champions, SSDLC, Pentest, Red Team.</dd></div>
+    <div><dt>Experiência</dt><dd>+8 anos de experiência de mercado.</dd></div>
+    <div><dt>Comunidade</dt><dd>Contribuição em projetos de código aberto.</dd></div>
+    <div><dt>Certificações</dt><dd>DCPT, OSCP, EHPX, Web API Exploitation.</dd></div>
+    <div><dt>Palestras</dt><dd>H2HC, Ekoparty, Boitatech</dd></div>
+  </dl>
+
+  <h2>💡 Carreira</h2>
+  <p class="lead">
+    Aqui estão os projetos que realizei durante minha trajetória para solucionar
+    problemas nas empresas das quais eu trabalhei e que tiveram impacto real.
+  </p>
+  <div class="grid">
+    {carreira.map((p) => (
+      <a class="card reveal" href={p.href}>
+        <img src={p.img} alt={p.title} loading="lazy" />
+        <h3>{p.title}</h3>
+        <p><small>{p.desc}</small></p>
+      </a>
+    ))}
+  </div>
+
+  <h2>📚 Palestras</h2>
+  <p class="lead">
+    Palestras que tive a oportunidade de ministrar podendo compartilhar um pouco do que
+    aprendi com as outras pessoas. Lugares que palestrei:
+    <a href="https://www.h2hc.com.br/">H2HC</a>,
+    <a href="https://ekoparty.org/">Ekoparty</a> e
+    <a href="https://boitatech.com/">Boitatech</a>
+  </p>
+  <div class="grid">
+    {palestras.map((p) => (
+      <a class="card reveal" href={p.href} target="_blank" rel="noopener">
+        <img src={p.img} alt={p.title} loading="lazy" />
+        <h3>{p.title}</h3>
+        <p><small>{p.desc}</small></p>
+      </a>
+    ))}
+  </div>
+</Layout>
+
+<style>
+  h1 { max-width: 68ch; margin-left: auto; margin-right: auto; }
+  h2, .lead { max-width: 68ch; margin-left: auto; margin-right: auto; }
+
+  .bio {
+    max-width: 68ch;
+    margin: 0 auto var(--space-8);
+    display: grid;
+    gap: var(--space-3);
+  }
+  .bio > div {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: var(--space-4);
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .bio dt {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .bio dd {
+    margin: 0;
+    color: var(--text-secondary);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-4);
+    margin: var(--space-6) 0 var(--space-12);
+  }
+  .card {
+    display: block;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: var(--space-4);
+    color: inherit;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  .card img {
+    display: block;
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    background: var(--bg-surface-raised);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-3);
+  }
+  .card h3 {
+    font-size: var(--text-md);
+    margin: 0 0 var(--space-2);
+  }
+  .card p {
+    margin: 0;
+  }
+</style>

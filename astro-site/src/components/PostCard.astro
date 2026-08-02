@@ -1,0 +1,63 @@
+---
+import Badge from './Badge.astro';
+
+interface Props {
+  title: string;
+  href: string;
+  pubDate: Date;
+  tags: string[];
+  category: string;
+  difficulty?: string;
+  readingTime?: number;
+}
+const { title, href, pubDate, tags, category, difficulty, readingTime } = Astro.props as Props;
+---
+<article class="card">
+  <a class="card-link" href={href}>
+    <h3>{title}</h3>
+    <p class="date">
+      <small>{pubDate.toLocaleDateString('pt-BR')}{readingTime ? ` · ${readingTime} min` : ''}</small>
+    </p>
+    <div class="badges">
+      <Badge variant="category" value={category} />
+      {difficulty && <Badge variant="difficulty" value={difficulty} />}
+      {tags.filter((t) => t !== 'blog' && t !== 'projeto').map((t) => (
+        <Badge variant="tag" value={t} />
+      ))}
+    </div>
+  </a>
+</article>
+
+<style>
+  .card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .card-link {
+    display: block;
+    padding: var(--space-5) var(--space-6);
+    color: inherit;
+  }
+  .card-link:hover {
+    text-decoration: none;
+  }
+  h3 {
+    margin: 0 0 var(--space-2);
+    font-size: var(--text-lg);
+    color: var(--text-primary);
+  }
+  .date {
+    margin: 0 0 var(--space-3);
+  }
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+</style>

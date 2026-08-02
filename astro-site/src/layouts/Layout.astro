@@ -1,0 +1,65 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import Nav from '../components/Nav.astro';
+import PageFx from '../components/PageFx.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = 'Blog Pirata — writeups, tutoriais e projetos de segurança ofensiva.',
+  ogImage = '/assets/img/opengraph.png',
+} = Astro.props;
+---
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <script is:inline>
+      const t = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} · Blog Pirata</title>
+    <meta name="description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <ClientRouter />
+  </head>
+  <body>
+    <PageFx />
+    <Nav />
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <small>Blog Pirata <span class="t-cursor">_</span></small>
+    </footer>
+    <script src="/scroll-reveal.js" defer></script>
+  </body>
+</html>
+
+<style>
+  footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: var(--space-6);
+    border-top: 1px solid var(--border-subtle);
+  }
+  .t-cursor {
+    color: var(--accent);
+    animation: blink 1s step-end infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .t-cursor { animation: none; }
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+</style>

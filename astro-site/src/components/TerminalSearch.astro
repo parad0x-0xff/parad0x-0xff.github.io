@@ -1,0 +1,58 @@
+---
+---
+<div class="terminal-window search-term">
+  <div class="titlebar">
+    <span class="dot dot-r"></span>
+    <span class="dot dot-y"></span>
+    <span class="dot dot-g"></span>
+  </div>
+  <div class="body">
+    <label for="post-search"><span class="prompt">$</span> grep -i</label>
+    <input id="post-search" type="search" placeholder="code review, ctf, mobile..." autocomplete="off" />
+  </div>
+</div>
+<p id="search-empty" class="search-empty" hidden>Nenhum post bate com essa busca.</p>
+
+<script src="/blog-search.js" defer></script>
+
+<style>
+  .search-term {
+    margin-bottom: var(--space-8);
+  }
+  .search-term .body {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+  }
+  .search-term .prompt {
+    color: var(--accent);
+  }
+  .search-term label {
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+  .search-term input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+  }
+  .search-term input:focus {
+    outline: none;
+  }
+  .search-term:focus-within {
+    border-color: var(--accent);
+    box-shadow: var(--glow-accent);
+  }
+  .search-empty {
+    margin: var(--space-8) 0;
+    text-align: center;
+    color: var(--text-tertiary);
+    font-family: var(--font-mono);
+  }
+</style>
