@@ -30,7 +30,7 @@ const dotColor =
 ---
 <span class={`badge badge-${variant}`}>
   <span class="dot" style={`background:${dotColor}`}></span>
-  {label}
+  <span data-i18n={variant === 'category' ? `badge.${value}` : undefined}>{label}</span>
 </span>
 
 <style>

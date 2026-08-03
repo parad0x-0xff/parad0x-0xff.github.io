@@ -1,90 +1,167 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { CASES as carreira } from '../lib/cases';
+import Layout from "../layouts/Layout.astro";
+import { CASES as carreira } from "../lib/cases";
+
+// TODO: ajustar para os anos reais de cada empresa
+const experiencia = [
+  { company: "Deloitte", period: "2018 — 2019" },
+  { company: "KPMG", period: "2022 — 2023" },
+  { company: "XP", period: "2021 — 2022" },
+  { company: "Picpay", period: "2019 — 2021" },
+  { company: "Willbank", period: "2018 — 2019" },
+  { company: "Nubank", period: "2016 — 2018" },
+  { company: "Benup", period: "2025 — Atual" },
+];
 
 const palestras = [
   {
-    title: 'Secure mobile pipeline',
-    href: 'https://docs.google.com/presentation/d/1z8MUoA6KhZeN8__JZA5EyYvnJotpFpKT7sx3-doz_Eo/edit#slide=id.g1ff97067bf6_0_579',
-    img: '/assets/img/secure-mobile-pipeline.png',
-    desc: 'Demonstração de uma pipeline para dispositivos mobile.',
+    title: "Secure mobile pipeline",
+    href: "https://docs.google.com/presentation/d/1z8MUoA6KhZeN8__JZA5EyYvnJotpFpKT7sx3-doz_Eo/edit#slide=id.g1ff97067bf6_0_579",
+    img: "/assets/img/secure-mobile-pipeline.png",
+    desc: "Demonstração de uma pipeline para dispositivos mobile.",
   },
   {
-    title: 'From Time to Binary',
-    href: 'https://docs.google.com/presentation/d/1KGncsmtx32wSB-f0v446zc9TJBXgJ85keQs0jgUYAMM/edit#slide=id.g2d56dc45c06_0_43',
-    img: '/assets/img/from-time-to-binary.png',
-    desc: 'Aumentando o impacto através de uma função de random inseguro.',
+    title: "From Time to Binary",
+    href: "https://docs.google.com/presentation/d/1KGncsmtx32wSB-f0v446zc9TJBXgJ85keQs0jgUYAMM/edit#slide=id.g2d56dc45c06_0_43",
+    img: "/assets/img/from-time-to-binary.png",
+    desc: "Aumentando o impacto através de uma função de random inseguro.",
   },
   {
-    title: 'Lições de uma CVE',
-    href: 'https://docs.google.com/presentation/d/1h5YNdakjMscTL1cXg8jS7czBTytJJ4zJ/edit#slide=id.p1',
-    img: '/assets/img/cve-lessons.png',
-    desc: 'Como é o processo de identificar um Zero Day!',
+    title: "Lições de uma CVE",
+    href: "https://docs.google.com/presentation/d/1h5YNdakjMscTL1cXg8jS7czBTytJJ4zJ/edit#slide=id.p1",
+    img: "/assets/img/cve-lessons.png",
+    desc: "Como é o processo de identificar um Zero Day!",
   },
   {
-    title: 'Seu pentest não vale nada!',
-    href: 'https://docs.google.com/presentation/d/1IgqUBk14SK-FLBOLfVPYoTUD9pgxTzLA/edit#slide=id.g1ea1f851150_0_0',
-    img: '/assets/img/pentest-worthless.png',
-    desc: 'O pentest não tem valor se não souber ser reportado!',
+    title: "Seu pentest não vale nada!",
+    href: "https://docs.google.com/presentation/d/1IgqUBk14SK-FLBOLfVPYoTUD9pgxTzLA/edit#slide=id.g1ea1f851150_0_0",
+    img: "/assets/img/pentest-worthless.png",
+    desc: "O pentest não tem valor se não souber ser reportado!",
   },
   {
-    title: 'Code Review',
-    href: 'https://docs.google.com/presentation/d/1TABCRTsX6gtwud6QEdIACBQoyn6kN0Jv/edit#slide=id.p1',
-    img: '/assets/img/code-review-ppt.png',
-    desc: 'Como realizar um processo de code review.',
+    title: "Code Review",
+    href: "https://docs.google.com/presentation/d/1TABCRTsX6gtwud6QEdIACBQoyn6kN0Jv/edit#slide=id.p1",
+    img: "/assets/img/code-review-ppt.png",
+    desc: "Como realizar um processo de code review.",
   },
 ];
 ---
+
 <Layout title="About Me">
   <h1>Allan Trindad</h1>
 
   <dl class="bio">
-    <div><dt>Nome</dt><dd>Allan Trindad</dd></div>
-    <div><dt>Profissão</dt><dd>Especialista em Segurança Cibernética</dd></div>
-    <div><dt>Especialidade</dt><dd>Code Review, Web Security, CTF, Fintechs, Pirataria (☠️)<br />DevSecOps, Security Champions, SSDLC, Pentest, Red Team.</dd></div>
-    <div><dt>Experiência</dt><dd>+8 anos de experiência de mercado.</dd></div>
-    <div><dt>Comunidade</dt><dd>Contribuição em projetos de código aberto.</dd></div>
-    <div><dt>Certificações</dt><dd>DCPT, OSCP, EHPX, Web API Exploitation.</dd></div>
-    <div><dt>Palestras</dt><dd>H2HC, Ekoparty, Boitatech</dd></div>
+    <div><dt data-i18n="about.label.name">Nome</dt><dd>Allan Trindad</dd></div>
+    <div>
+      <dt data-i18n="about.label.role">Profissão</dt><dd
+        data-i18n="about.value.role"
+      >
+        Especialista em Segurança Cibernética
+      </dd>
+    </div>
+    <div>
+      <dt data-i18n="about.label.specialty">Especialidade</dt><dd>
+        Code Review, Web Security, CTF, Fintechs, Pirataria (☠️)<br />DevSecOps,
+        Security Champions, SSDLC, Pentest, Red Team.
+      </dd>
+    </div>
+    <div>
+      <dt data-i18n="about.label.experience">Experiência</dt><dd
+        data-i18n="about.value.experience"
+      >
+        +8 anos de experiência de mercado.
+      </dd>
+    </div>
+    <div>
+      <dt data-i18n="about.label.community">Comunidade</dt><dd
+        data-i18n="about.value.community"
+      >
+        Contribuição em projetos de código aberto.
+      </dd>
+    </div>
+    <div>
+      <dt data-i18n="about.label.certs">Certificações</dt><dd>
+        DCPT, OSCP, EHPX, Web API Exploitation.
+      </dd>
+    </div>
+    <div>
+      <dt data-i18n="about.label.talks">Palestras</dt><dd>
+        H2HC, Ekoparty, Boitatech
+      </dd>
+    </div>
   </dl>
 
-  <h2>💡 Carreira</h2>
-  <p class="lead">
+  <h2 data-i18n="about.h2.experience">Experiência Profissional</h2>
+  <ol class="timeline">
+    {
+      experiencia.map((e, i) => (
+        <li class={i % 2 === 0 ? "tl-up" : "tl-down"}>
+          <div class="tl-card">
+            <span class="timeline-period">{e.period}</span>
+            <span class="timeline-company">{e.company}</span>
+          </div>
+          <span class="tl-rail">
+            <span class="tl-dot" />
+          </span>
+        </li>
+      ))
+    }
+  </ol>
+
+  <h2 data-i18n="about.h2.career">Cases de sucesso</h2>
+  <p class="lead" data-i18n="about.career.lead">
     Aqui estão os projetos que realizei durante minha trajetória para solucionar
     problemas nas empresas das quais eu trabalhei e que tiveram impacto real.
   </p>
   <div class="grid">
-    {carreira.map((p) => (
-      <a class="card reveal" href={p.href}>
-        <img src={p.img} alt={p.title} loading="lazy" />
-        <h3>{p.title}</h3>
-        <p><small>{p.desc}</small></p>
-      </a>
-    ))}
+    {
+      carreira.map((p) => (
+        <a class="card reveal" href={p.href}>
+          <img src={p.img} alt={p.title} loading="lazy" />
+          <h3>{p.title}</h3>
+          <p>
+            <small>{p.desc}</small>
+          </p>
+        </a>
+      ))
+    }
   </div>
 
-  <h2>📚 Palestras</h2>
+  <h2 data-i18n="about.h2.talks">📚 Palestras</h2>
   <p class="lead">
-    Palestras que tive a oportunidade de ministrar podendo compartilhar um pouco do que
-    aprendi com as outras pessoas. Lugares que palestrei:
+    Palestras que tive a oportunidade de ministrar podendo compartilhar um pouco
+    do que aprendi com as outras pessoas. Lugares que palestrei:
     <a href="https://www.h2hc.com.br/">H2HC</a>,
     <a href="https://ekoparty.org/">Ekoparty</a> e
     <a href="https://boitatech.com/">Boitatech</a>
   </p>
   <div class="grid">
-    {palestras.map((p) => (
-      <a class="card reveal" href={p.href} target="_blank" rel="noopener">
-        <img src={p.img} alt={p.title} loading="lazy" />
-        <h3>{p.title}</h3>
-        <p><small>{p.desc}</small></p>
-      </a>
-    ))}
+    {
+      palestras.map((p) => (
+        <a class="card reveal" href={p.href} target="_blank" rel="noopener">
+          <img src={p.img} alt={p.title} loading="lazy" />
+          <h3>{p.title}</h3>
+          <p>
+            <small>{p.desc}</small>
+          </p>
+        </a>
+      ))
+    }
   </div>
 </Layout>
 
 <style>
-  h1 { max-width: 68ch; margin-left: auto; margin-right: auto; }
-  h2, .lead { max-width: 68ch; margin-left: auto; margin-right: auto; }
+  h1 {
+    max-width: 68ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h2,
+  .lead {
+    max-width: 68ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .bio {
     max-width: 68ch;
@@ -110,6 +187,98 @@ const palestras = [
     color: var(--text-secondary);
   }
 
+  .timeline {
+    display: flex;
+    list-style: none;
+    margin: var(--space-16) 0 var(--space-16);
+    padding: 0 var(--space-2);
+    overflow-x: auto;
+  }
+  .timeline li {
+    flex: 1 0 150px;
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    justify-items: center;
+    position: relative;
+  }
+  .tl-rail {
+    grid-row: 2;
+    position: relative;
+    width: 100%;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tl-rail::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: var(--border-subtle);
+  }
+  .tl-dot {
+    position: relative;
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: var(--glow-accent);
+  }
+  .tl-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    text-align: center;
+    padding: 0 var(--space-2);
+  }
+  li.tl-up .tl-card {
+    grid-row: 1;
+    align-self: end;
+    margin-bottom: var(--space-4);
+  }
+  li.tl-down .tl-card {
+    grid-row: 3;
+    align-self: start;
+    margin-top: var(--space-4);
+  }
+  li.tl-up .tl-card::after,
+  li.tl-down .tl-card::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: var(--space-4);
+    background: var(--border-subtle);
+    transform: translateX(-50%);
+  }
+  li.tl-up .tl-card::after {
+    bottom: calc(-1 * var(--space-4));
+  }
+  li.tl-down .tl-card::before {
+    top: calc(-1 * var(--space-4));
+  }
+  .timeline-period {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .timeline-company {
+    display: block;
+    font-size: var(--text-lg);
+    font-weight: var(--fw-semibold);
+    margin-top: var(--space-1);
+  }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -123,7 +292,9 @@ const palestras = [
     border-radius: var(--radius-xl);
     padding: var(--space-4);
     color: inherit;
-    transition: border-color 0.15s ease, transform 0.15s ease;
+    transition:
+      border-color 0.15s ease,
+      transform 0.15s ease;
   }
   .card:hover {
     border-color: var(--accent);

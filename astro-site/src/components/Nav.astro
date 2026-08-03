@@ -17,25 +17,28 @@ const otherCount = getOtherPosts(posts).length;
   </button>
 
   <div class="links" id="nav-links">
-    <a href="/" data-nav-link class:list={{ active: isActive('/') && path === '/' }}>home</a>
+    <a href="/" data-nav-link data-i18n="nav.home" class:list={{ active: isActive('/') && path === '/' }}>home</a>
 
     <details class="nav-dropdown" data-nav-dropdown>
-      <summary class:list={{ active: isActive('/blog/') }}>blog</summary>
+      <summary data-i18n="nav.blog" class:list={{ active: isActive('/blog/') }}>blog</summary>
       <div class="dropdown-panel">
-        <a href="/blog/">ver tudo</a>
-        <a href="/blog/#recentes">recentes</a>
+        <a href="/blog/" data-i18n="nav.blog.all">ver tudo</a>
+        <a href="/blog/#recentes" data-i18n="nav.blog.recent">recentes</a>
         {topicCounts.map((t) => (
           <a href={`/blog/#${t.value}`}>{t.label} ({t.count})</a>
         ))}
-        {otherCount > 0 && <a href="/blog/#outros">projetos &amp; outros ({otherCount})</a>}
+        {otherCount > 0 && (
+          <a href="/blog/#outros"><span data-i18n="nav.blog.other">projetos &amp; outros</span> ({otherCount})</a>
+        )}
       </div>
     </details>
 
     {import.meta.env.DEV && (
-      <a href="/comece-aqui/" data-nav-link class:list={{ active: isActive('/comece-aqui/') }}>comece aqui</a>
+      <a href="/comece-aqui/" data-nav-link data-i18n="nav.start" class:list={{ active: isActive('/comece-aqui/') }}>comece aqui</a>
     )}
-    <a href="/about/" data-nav-link class:list={{ active: isActive('/about/') }}>about</a>
-    <button id="theme-toggle" type="button" aria-label="Alternar tema">◐</button>
+    <a href="/about/" data-nav-link data-i18n="nav.about" class:list={{ active: isActive('/about/') }}>about</a>
+    <button id="lang-toggle" class="lang-toggle" type="button">PT-BR</button>
+    <button id="theme-toggle" type="button" data-i18n-aria-label="nav.theme" aria-label="Alternar tema">◐</button>
   </div>
 </nav>
 
@@ -186,6 +189,23 @@ const otherCount = getOtherPosts(posts).length;
     text-decoration: none;
   }
 
+  .lang-toggle {
+    background: none;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    border-radius: var(--radius-full);
+    padding: 0 var(--space-3);
+    height: 28px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.03em;
+  }
+  .lang-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
   #theme-toggle {
     background: none;
     border: 1px solid var(--border-subtle);
@@ -237,6 +257,10 @@ const otherCount = getOtherPosts(posts).length;
       box-shadow: none;
       background: var(--bg-surface-raised);
       padding: 0 0 var(--space-2) var(--space-6);
+    }
+    .lang-toggle {
+      align-self: flex-start;
+      margin: var(--space-4) var(--space-6) 0;
     }
     #theme-toggle {
       margin: var(--space-4) var(--space-6);

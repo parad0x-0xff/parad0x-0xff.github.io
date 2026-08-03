@@ -22,7 +22,7 @@ const daysSinceLast = Math.floor(
   <TerminalHero />
 
   <div class="section-head">
-    <span class="section-title">Principais cases</span>
+    <span class="section-title" data-i18n="home.cases.title">Principais cases</span>
   </div>
   <div class="carousel">
     <button class="car-btn car-prev" type="button" aria-label="Case anterior">‹</button>
@@ -35,7 +35,7 @@ const daysSinceLast = Math.floor(
             <div class="case-stack">
               {c.stack.map((s) => <span class="stack-tag">{s}</span>)}
             </div>
-            <span class="case-arrow">Ler case <span>→</span></span>
+            <span class="case-arrow"><span data-i18n="home.cases.cta">Ler case</span> <span>→</span></span>
           </div>
           <div class="case-visual">
             <img src={c.img} alt={c.title} loading="lazy" />
@@ -58,13 +58,13 @@ const daysSinceLast = Math.floor(
   </script>
 
   <div class="section-head" style="margin-top: var(--space-12)">
-    <span class="section-title">Posts recentes</span>
-    <a class="section-link" href="/blog/">ver tudo →</a>
+    <span class="section-title" data-i18n="home.posts.title">Posts recentes</span>
+    <a class="section-link" href="/blog/" data-i18n="home.posts.viewall">ver tudo →</a>
   </div>
   <div class="posts-grid">
     {recentPosts.map((post) => (
       <a class="post-tile reveal" href={`/blog/${post.id}/`}>
-        <div class="tile-status">● publicado</div>
+        <div class="tile-status" data-i18n="home.posts.status">● publicado</div>
         <h3>{post.data.title}</h3>
         <p class="tile-meta">
           {post.data.pubDate.toLocaleDateString('pt-BR')} · {getReadingTime(post)} min
@@ -73,7 +73,7 @@ const daysSinceLast = Math.floor(
           <Badge variant="category" value={post.data.category} />
           {post.data.tags.slice(0, 2).map((t) => <Badge variant="tag" value={t} />)}
         </div>
-        <span class="tile-action">Ler mais <span>→</span></span>
+        <span class="tile-action"><span data-i18n="home.posts.cta">Ler mais</span> <span>→</span></span>
       </a>
     ))}
   </div>
@@ -81,23 +81,23 @@ const daysSinceLast = Math.floor(
   <div class="stats-row">
     <div class="stat">
       <div class="stat-value">{totalPosts}</div>
-      <div class="stat-label">posts publicados</div>
+      <div class="stat-label" data-i18n="home.stats.posts">posts publicados</div>
     </div>
     <div class="stat">
       <div class="stat-value">{topicsCovered}</div>
-      <div class="stat-label">temas cobertos</div>
+      <div class="stat-label" data-i18n="home.stats.topics">temas cobertos</div>
     </div>
     <div class="stat">
       <div class="stat-value">{yearsWriting}+</div>
-      <div class="stat-label">anos escrevendo</div>
+      <div class="stat-label" data-i18n="home.stats.years">anos escrevendo</div>
     </div>
     <div class="stat">
-      <div class="stat-value">{daysSinceLast}d atrás</div>
-      <div class="stat-label">última publicação</div>
+      <div class="stat-value">{daysSinceLast}<span data-i18n="home.stats.daysago">d atrás</span></div>
+      <div class="stat-label" data-i18n="home.stats.last">última publicação</div>
     </div>
   </div>
 
-  <blockquote class="aviso">
+  <blockquote class="aviso" data-i18n="home.aviso">
     Todos os artigos escritos aqui se limitam apenas para fins educativos,
     não me responsabilizando pelo uso indevido das informações escritas aqui.
   </blockquote>

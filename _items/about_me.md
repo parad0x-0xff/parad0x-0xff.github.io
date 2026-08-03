@@ -17,7 +17,7 @@ title: About Me
 | **Palestras:**| H2HC, Ekoparty, Boitatech |
 
 
-## 💡 Carreira
+## Cases de sucesso
 Aqui estão os projetos que realizei durante minha trajetória para solucionar problemas nas empresas das quais eu trabalhei e que tiveram impacto real.
 
 | Mobile Framework |Fraude as a Service| DAST + Auth | Pentest Report |
@@ -25,7 +25,7 @@ Aqui estão os projetos que realizei durante minha trajetória para solucionar p
 | <a href="/dropdown/2024-08-01-Mobile-Framework.html"> <img src="/assets/img/android-ios.png" height="150" width="180"/> Modelo que ajuda a medir a maturidade do aplicativo mobile e das suas respectivas defesas. </a> |<a href="/dropdown/2023-09-14-FaaS.html"> <img src="/assets/img/fraude.jpg" height="300" width="300" /> Simulação de um sistema de fraude para demonstração de impacto financeiro e reputacional.</a> |<a href="/dropdown/2020-10-18-Dast-Auth.html"> <img src="/assets/img/zapproxy.png" height="150" width="150"/>Implementação de pipeline DAST + Scan em API autenticado. </a> |<a href="/dropdown/2023-03-04-pentest-report.html"> <img src="/assets/img/sunny.png" height="200" width="250"/> Criação de modelo de report para pentest.</a>|
 
 
-## 📚 Palestras
+## Palestras
 Palestras que tive a oportunidade de ministrar podendo compartilhar um pouco do que
 aprendi com as outras pessoas. Lugares que palestrei: [H2HC](https://www.h2hc.com.br/), [Ekoparty](https://ekoparty.org/) e [Boitatech](https://boitatech.com/)
 
